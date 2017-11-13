@@ -3,6 +3,8 @@
 using namespace gamebase;
 using namespace std;
 
+int stepn = 10;
+
 struct gundata
 {
 	string nameg;
@@ -545,11 +547,36 @@ class MyApp : public App
 		}
 		*/
 
+		/*
+		if( tower==0)
+		{
+		if( gun=1)
+		{
+		guns.clear();
+		guns.add(loadObj <GameObj> ("g1"));
+		sg = Vec2(32.0, 0.0);
+		g1.setPos(t1.pos);
+		sg.setAngle(t1);
+		g1.setPos(g1.pos+sg*timeDelta());
+
+		}
+		}
+		*/
+		mainbhbphspbhbp.setPos(mainhs.pos().x, mainhs.pos().y + 50);
+		mainbhbphspbhbp.child<GameObj>("hpb").setScaleX(myratio);
+		animbhbphspbhbp.setPos(animhs.pos().x, animhs.pos().y + 50);
+		animbhbphspbhbp.child<GameObj>("hpb").setScaleX(ratio);
+		gamepole.setView(mainhs.pos());
+
+	}
+
+	void moveShells()
+	{
 		for (auto shell : shaders2.all())
 		{
 			auto vecsh = Vec2(2000.0, 0.0);
 			vecsh.rotate(shell.angle());
-			shell.setPos(shell.pos() + vecsh* timeDelta());
+			shell.setPos(shell.pos() + vecsh / stepn * timeDelta());
 			if (!shell.box().intersects(gamepole.gameBox()))
 			{
 				shaders2.remove(shell);
@@ -608,7 +635,7 @@ class MyApp : public App
 			{
 				int a = 0;
 				shaders2.remove(shell);
-				myhp-= gddos[Agun].uron;
+				myhp -= gddos[Agun].uron;
 				a = randomInt(1, 2);
 				if ((a == 2) && (radio<2))
 					radio++;
@@ -624,7 +651,7 @@ class MyApp : public App
 					shaders2.remove(shell);
 					myhp -= gddos[Agun].uron * 2;
 					a = randomInt(1, 2);
-					if ((a == 2)&&(bk<2))
+					if ((a == 2) && (bk<2))
 						bk++;
 					a = randomInt(1, 2);
 					if ((a == 2) && (dulo<2))
@@ -654,7 +681,11 @@ class MyApp : public App
 				}
 			}
 		}
+	}
 
+	void moveAnim()
+	{
+		auto angvec = mainhs.pos() - animt.pos();
 		if (dist(mainhs.pos(), animhs.pos()) > 400)
 		{
 			auto spvec = Vec2(hsddos[Ahousing].hsspeed, 0.0);
@@ -699,6 +730,7 @@ class MyApp : public App
 				}
 			}
 		}
+
 		if (!(animt.angle() <= angvec.angle() + 0.174 && animt.angle() >= angvec.angle() - 0.174))
 		{
 			if (animt.angle() < angvec.angle())
@@ -726,33 +758,13 @@ class MyApp : public App
 				}
 			}
 		}
-
-		/*
-		if( tower==0)
-		{
-		if( gun=1)
-		{
-		guns.clear();
-		guns.add(loadObj <GameObj> ("g1"));
-		sg = Vec2(32.0, 0.0);
-		g1.setPos(t1.pos);
-		sg.setAngle(t1);
-		g1.setPos(g1.pos+sg*timeDelta());
-
-		}
-		}
-		*/
-		mainbhbphspbhbp.setPos(mainhs.pos().x, mainhs.pos().y + 50);
-		mainbhbphspbhbp.child<GameObj>("hpb").setScaleX(myratio);
-		animbhbphspbhbp.setPos(animhs.pos().x, animhs.pos().y + 50);
-		animbhbphspbhbp.child<GameObj>("hpb").setScaleX(ratio);
-		gamepole.setView(mainhs.pos());
-
 	}
 
 	void move()
-
 	{
+		for(int i=0;i<stepn;i++)
+		moveShells();
+		moveAnim();
 	}
 
 	/*float ag1;
@@ -825,7 +837,7 @@ class MyApp : public App
 int main(int argc, char** argv)
 {
 	MyApp app;
-	app.setConfig("tankyProgectXConfig.json");
+	app.setConfig("ProjectTankiXConfig.json");
 	app.setDesign("Design.json");
 	if (!app.init(&argc, argv))
 		return 1;
