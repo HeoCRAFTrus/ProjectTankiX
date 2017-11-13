@@ -1,0 +1,558 @@
+{
+   "_typeName" : "CanvasLayout",
+   "_version" : "VER3",
+   "adjustment" : 0,
+   "box" : {
+      "_typeName" : "RelativeBox",
+      "height" : {
+         "_typeName" : "RelativeValue",
+         "type" : 0,
+         "value" : 0
+      },
+      "offset" : {
+         "_empty" : true
+      },
+      "width" : {
+         "_typeName" : "RelativeValue",
+         "type" : 0,
+         "value" : 0
+      }
+   },
+   "objects" : [
+      {
+         "_key" : 0,
+         "_value" : {
+            "_name" : "gamepole",
+            "_typeName" : "GameView",
+            "box" : {
+               "_typeName" : "RelativeBox",
+               "height" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 0,
+                  "value" : 0
+               },
+               "offset" : {
+                  "_empty" : true
+               },
+               "width" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 0,
+                  "value" : 0
+               }
+            },
+            "gameRelBox" : {
+               "_typeName" : "RelativeBox",
+               "height" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 2,
+                  "value" : 10
+               },
+               "offset" : {
+                  "_empty" : true
+               },
+               "width" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 2,
+                  "value" : 10
+               }
+            },
+            "layers" : [
+               {
+                  "_key" : 0,
+                  "_value" : {
+                     "_name" : "graund",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : [
+                        {
+                           "_key" : 0,
+                           "_value" : {
+                              "_typeName" : "Pattern",
+                              "box" : {
+                                 "_typeName" : "RelativeBox",
+                                 "height" : {
+                                    "_typeName" : "RelativeValue",
+                                    "type" : 2,
+                                    "value" : 10
+                                 },
+                                 "offset" : {
+                                    "_empty" : true
+                                 },
+                                 "width" : {
+                                    "_typeName" : "RelativeValue",
+                                    "type" : 2,
+                                    "value" : 10
+                                 }
+                              },
+                              "color" : [ 1, 1, 1, 1 ],
+                              "imageName" : "земля\\pattern4.png",
+                              "periods" : [ 90, 90 ],
+                              "position" : {
+                                 "_typeName" : "AligningOffset",
+                                 "horAlign" : 1,
+                                 "horOffset" : {
+                                    "_typeName" : "RelativeValue",
+                                    "type" : 1,
+                                    "value" : 0
+                                 },
+                                 "vertAlign" : 1,
+                                 "vertOffset" : {
+                                    "_typeName" : "RelativeValue",
+                                    "type" : 1,
+                                    "value" : 0
+                                 }
+                              },
+                              "texCoordsOffset" : [ 0, 0 ],
+                              "wrapX" : 1,
+                              "wrapY" : 1
+                           }
+                        },
+                        {
+                           "_key" : 1,
+                           "_value" : {
+                              "_name" : "kishki_angara",
+                              "_typeName" : "ObjectConstruct",
+                              "animations" : [],
+                              "finder" : {
+                                 "_typeName" : "FindableGeometryElement",
+                                 "geom" : {
+                                    "_typeName" : "IdenticGeometry"
+                                 }
+                              },
+                              "id" : 1,
+                              "position" : {
+                                 "_typeName" : "PositionElement",
+                                 "angle" : 0,
+                                 "offset" : [ 0, 0 ],
+                                 "scaleX" : 1,
+                                 "scaleY" : 1
+                              },
+                              "selector" : {
+                                 "_typeName" : "PressableAndClickableElement",
+                                 "clickTime" : 500
+                              },
+                              "skin" : {
+                                 "_typeName" : "StaticTextureRect",
+                                 "box" : {
+                                    "_typeName" : "PixelBox",
+                                    "height" : 128,
+                                    "width" : 256
+                                 },
+                                 "color" : [ 1, 1, 1, 1 ],
+                                 "imageName" : "земля\\angar_kishki.png",
+                                 "position" : {
+                                    "_typeName" : "AligningOffset",
+                                    "horAlign" : 1,
+                                    "horOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    },
+                                    "vertAlign" : 1,
+                                    "vertOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    }
+                                 }
+                              },
+                              "transitionAnimations" : []
+                           }
+                        }
+                     ]
+                  }
+               },
+               {
+                  "_key" : 3,
+                  "_value" : {
+                     "_name" : "housing",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : []
+                  }
+               },
+               {
+                  "_key" : 4,
+                  "_value" : {
+                     "_name" : "shaders1",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : []
+                  }
+               },
+               {
+                  "_key" : 5,
+                  "_value" : {
+                     "_name" : "towers",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : []
+                  }
+               },
+               {
+                  "_key" : 6,
+                  "_value" : {
+                     "_name" : "shaders2",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : []
+                  }
+               },
+               {
+                  "_key" : 7,
+                  "_value" : {
+                     "_name" : "turets",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : []
+                  }
+               },
+               {
+                  "_key" : 8,
+                  "_value" : {
+                     "_name" : "guns",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : []
+                  }
+               },
+               {
+                  "_key" : 10,
+                  "_value" : {
+                     "_name" : "baricades",
+                     "_typeName" : "SimpleLayer",
+                     "objects" : [
+                        {
+                           "_key" : 0,
+                           "_value" : {
+                              "_name" : "wall2",
+                              "_typeName" : "ObjectConstruct",
+                              "animations" : [],
+                              "finder" : {
+                                 "_typeName" : "FindableGeometryElement",
+                                 "geom" : {
+                                    "_typeName" : "IdenticGeometry"
+                                 }
+                              },
+                              "id" : 0,
+                              "position" : {
+                                 "_typeName" : "PositionElement",
+                                 "angle" : 0,
+                                 "offset" : [ 0, 0 ],
+                                 "scaleX" : 1,
+                                 "scaleY" : 1
+                              },
+                              "selector" : {
+                                 "_typeName" : "PressableAndClickableElement",
+                                 "clickTime" : 500
+                              },
+                              "skin" : {
+                                 "_typeName" : "StaticTextureRect",
+                                 "box" : {
+                                    "_typeName" : "PixelBox",
+                                    "height" : 2,
+                                    "width" : 256
+                                 },
+                                 "color" : [ 1, 1, 1, 1 ],
+                                 "imageName" : "",
+                                 "position" : {
+                                    "_typeName" : "AligningOffset",
+                                    "horAlign" : 1,
+                                    "horOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    },
+                                    "vertAlign" : 1,
+                                    "vertOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    }
+                                 }
+                              },
+                              "transitionAnimations" : []
+                           }
+                        },
+                        {
+                           "_key" : 1,
+                           "_value" : {
+                              "_name" : "wall1",
+                              "_typeName" : "ObjectConstruct",
+                              "animations" : [],
+                              "finder" : {
+                                 "_typeName" : "FindableGeometryElement",
+                                 "geom" : {
+                                    "_typeName" : "IdenticGeometry"
+                                 }
+                              },
+                              "id" : 1,
+                              "position" : {
+                                 "_typeName" : "PositionElement",
+                                 "angle" : 0,
+                                 "offset" : [ 0, 0 ],
+                                 "scaleX" : 1,
+                                 "scaleY" : 1
+                              },
+                              "selector" : {
+                                 "_typeName" : "PressableAndClickableElement",
+                                 "clickTime" : 500
+                              },
+                              "skin" : {
+                                 "_typeName" : "StaticTextureRect",
+                                 "box" : {
+                                    "_typeName" : "PixelBox",
+                                    "height" : 2,
+                                    "width" : 256
+                                 },
+                                 "color" : [ 1, 1, 1, 1 ],
+                                 "imageName" : "",
+                                 "position" : {
+                                    "_typeName" : "AligningOffset",
+                                    "horAlign" : 1,
+                                    "horOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    },
+                                    "vertAlign" : 1,
+                                    "vertOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    }
+                                 }
+                              },
+                              "transitionAnimations" : []
+                           }
+                        },
+                        {
+                           "_key" : 2,
+                           "_value" : {
+                              "_name" : "angar",
+                              "_typeName" : "ObjectConstruct",
+                              "animations" : [],
+                              "finder" : {
+                                 "_typeName" : "FindableGeometryElement",
+                                 "geom" : {
+                                    "_typeName" : "IdenticGeometry"
+                                 }
+                              },
+                              "id" : 2,
+                              "position" : {
+                                 "_typeName" : "PositionElement",
+                                 "angle" : 0,
+                                 "offset" : [ 0, 0 ],
+                                 "scaleX" : 1,
+                                 "scaleY" : 1
+                              },
+                              "selector" : {
+                                 "_typeName" : "PressableAndClickableElement",
+                                 "clickTime" : 500
+                              },
+                              "skin" : {
+                                 "_typeName" : "StaticTextureRect",
+                                 "box" : {
+                                    "_typeName" : "PixelBox",
+                                    "height" : 128,
+                                    "width" : 256
+                                 },
+                                 "color" : [ 1, 1, 1, 1 ],
+                                 "imageName" : "земля\\angar2.png",
+                                 "position" : {
+                                    "_typeName" : "AligningOffset",
+                                    "horAlign" : 1,
+                                    "horOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    },
+                                    "vertAlign" : 1,
+                                    "vertOffset" : {
+                                       "_typeName" : "RelativeValue",
+                                       "type" : 1,
+                                       "value" : 0
+                                    }
+                                 }
+                              },
+                              "transitionAnimations" : []
+                           }
+                        }
+                     ]
+                  }
+               },
+               {
+                  "_key" : 11,
+                  "_value" : {
+                     "_name" : "bhbp",
+                     "_typeName" : "Layer",
+                     "index" : {
+                        "_typeName" : "FlatIndex",
+                        "keyType" : 2
+                     },
+                     "objects" : [],
+                     "order" : {
+                        "_typeName" : "SortByYOrder",
+                        "keyType" : 0
+                     }
+                  }
+               }
+            ],
+            "position" : {
+               "_typeName" : "AligningOffset",
+               "horAlign" : 1,
+               "horOffset" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 0
+               },
+               "vertAlign" : 1,
+               "vertOffset" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 0
+               }
+            },
+            "viewCenter" : [ 0, 0 ]
+         }
+      },
+      {
+         "_key" : 1,
+         "_value" : {
+            "_typeName" : "CanvasLayout",
+            "adjustment" : 0,
+            "box" : {
+               "_typeName" : "PixelBox",
+               "height" : 20,
+               "width" : 100
+            },
+            "objects" : [
+               {
+                  "_key" : 0,
+                  "_value" : {
+                     "_typeName" : "StaticFilledRect",
+                     "box" : {
+                        "_typeName" : "RelativeBox",
+                        "height" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 0,
+                           "value" : 0
+                        },
+                        "offset" : {
+                           "_empty" : true
+                        },
+                        "width" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 0,
+                           "value" : 0
+                        }
+                     },
+                     "color" : [ 1, 0, 0, 1 ],
+                     "position" : {
+                        "_typeName" : "AligningOffset",
+                        "horAlign" : 1,
+                        "horOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        },
+                        "vertAlign" : 1,
+                        "vertOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        }
+                     }
+                  }
+               },
+               {
+                  "_key" : 1,
+                  "_value" : {
+                     "_name" : "rload",
+                     "_typeName" : "ObjectConstruct",
+                     "animations" : [],
+                     "finder" : {
+                        "_typeName" : "FindableGeometryElement",
+                        "geom" : {
+                           "_typeName" : "IdenticGeometry"
+                        }
+                     },
+                     "id" : 0,
+                     "position" : {
+                        "_typeName" : "PositionElement",
+                        "angle" : 0,
+                        "offset" : [ 0, 0 ],
+                        "scaleX" : 1,
+                        "scaleY" : 1
+                     },
+                     "selector" : {
+                        "_typeName" : "PressableAndClickableElement",
+                        "clickTime" : 500
+                     },
+                     "skin" : {
+                        "_typeName" : "StaticTextureRect",
+                        "box" : {
+                           "_typeName" : "RelativeBox",
+                           "height" : {
+                              "_typeName" : "RelativeValue",
+                              "type" : 0,
+                              "value" : 0
+                           },
+                           "offset" : {
+                              "_empty" : true
+                           },
+                           "width" : {
+                              "_typeName" : "RelativeValue",
+                              "type" : 0,
+                              "value" : 0
+                           }
+                        },
+                        "color" : [ 0, 1, 0, 1 ],
+                        "imageName" : "",
+                        "position" : {
+                           "_typeName" : "AligningOffset",
+                           "horAlign" : 0,
+                           "horOffset" : {
+                              "_typeName" : "RelativeValue",
+                              "type" : 1,
+                              "value" : 0
+                           },
+                           "vertAlign" : 1,
+                           "vertOffset" : {
+                              "_typeName" : "RelativeValue",
+                              "type" : 1,
+                              "value" : 0
+                           }
+                        }
+                     },
+                     "transitionAnimations" : []
+                  }
+               }
+            ],
+            "position" : {
+               "_typeName" : "AligningOffset",
+               "horAlign" : 2,
+               "horOffset" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 0
+               },
+               "vertAlign" : 2,
+               "vertOffset" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 0
+               }
+            }
+         }
+      }
+   ],
+   "position" : {
+      "_typeName" : "AligningOffset",
+      "horAlign" : 1,
+      "horOffset" : {
+         "_typeName" : "RelativeValue",
+         "type" : 1,
+         "value" : 0
+      },
+      "vertAlign" : 1,
+      "vertOffset" : {
+         "_typeName" : "RelativeValue",
+         "type" : 1,
+         "value" : 0
+      }
+   }
+}
