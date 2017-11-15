@@ -166,6 +166,7 @@
             "_typeName" : "LinearLayout",
             "list" : [
                {
+                  "_name" : "bk",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
                      "_typeName" : "PixelBox",
@@ -173,7 +174,7 @@
                      "width" : 32
                   },
                   "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "gus.png",
+                  "imageName" : "модули\\bk.png",
                   "position" : {
                      "_typeName" : "AligningOffset",
                      "horAlign" : 0,
@@ -191,6 +192,7 @@
                   }
                },
                {
+                  "_name" : "bus",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
                      "_typeName" : "PixelBox",
@@ -198,32 +200,7 @@
                      "width" : 32
                   },
                   "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "gus2.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "rad2.png",
+                  "imageName" : "модули\\bus.png",
                   "position" : {
                      "_typeName" : "AligningOffset",
                      "horAlign" : 0,
@@ -241,6 +218,7 @@
                   }
                },
                {
+                  "_name" : "bus2",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
                      "_typeName" : "PixelBox",
@@ -248,7 +226,267 @@
                      "width" : 32
                   },
                   "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "rad.png",
+                  "imageName" : "модули\\bus2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "dvig",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\dvig.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "dvig",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "земля\\..\\модули\\dvig2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "gus",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\gus.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "gus2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\gus2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "ggun",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\ggun.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "ggun2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\ggun2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "rad",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\rad.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "rad2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\rad2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "trip",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\trip.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "trip2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "модули\\trip2.png",
                   "position" : {
                      "_typeName" : "AligningOffset",
                      "horAlign" : 0,
