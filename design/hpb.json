@@ -163,6 +163,7 @@
             }
          },
          {
+            "_name" : "Row",
             "_typeName" : "LinearLayout",
             "list" : [
                {
@@ -270,7 +271,7 @@
                   }
                },
                {
-                  "_name" : "dvig",
+                  "_name" : "dvig2",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
                      "_typeName" : "PixelBox",
