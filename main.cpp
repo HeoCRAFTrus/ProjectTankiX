@@ -937,11 +937,12 @@ class MyApp : public App
 		{
 			auto spvec = Vec2(hsddos[Ahousing].hsspeed, 0.0);
 			spvec.rotate(animhsangle);
-
-			animhs.setPos(animhs.pos() + spvec * timeDelta());
+			if (Adviglo != 2)
+			{
+				animhs.setPos(animhs.pos() + spvec * timeDelta());
 			animt.setPos(animt.pos() + spvec * timeDelta());
 			animg.setPos(animg.pos() + spvec * timeDelta());
-
+		}
 			if (!(animhs.angle() <= angvec.angle() + 0.174 && animhs.angle() >= angvec.angle() - 0.174))
 			{
 				if (animhs.angle() < angvec.angle())
