@@ -329,7 +329,7 @@ class MyApp : public App
 			}
 		}
 
-		if (input.pressed('ó') || input.pressed('e') || input.pressed('k') || input.pressed('ë'))
+		if ((input.pressed('ó') || input.pressed('e') || input.pressed('k') || input.pressed('ë'))&&(bashnia<2))
 		{
 			maint.setAngle(maint.angle() - tddos[tower].tfov*timeDelta());
 			maing.setAngle(maing.angle() - tddos[tower].tfov*timeDelta());
@@ -338,7 +338,7 @@ class MyApp : public App
 			maing.setPos(gvec + maint.pos());
 		}
 
-		if (input.pressed('é') || input.pressed('q') || input.pressed('j') || input.pressed('î'))
+		if ((input.pressed('é') || input.pressed('q') || input.pressed('j') || input.pressed('î')) && (bashnia<2))
 		{
 			maint.setAngle(maint.angle() + tddos[tower].tfov*timeDelta());
 			maing.setAngle(maing.angle() + tddos[tower].tfov*timeDelta());
@@ -851,16 +851,20 @@ class MyApp : public App
 				sdvigvec.rotate(animhsangle);
 				if (dist(shell.pos(), animhs.pos() + sdvigvec) <= hsddos[Ahousing].diameter / 2)
 				{
-					int a = 0;
+					
 					shaders2.remove(shell);
 					mainhp -= gddos[gun].uron * 2;
-					a = randomInt(1, 3);
+					
+					int a = 0;
+					a = randomInt(1, 4);
 					if ((a == 1) && (Abk<2))
 						Abk++;
 					if ((a == 2) && (Adulo<2))
 						Adulo++;
 					if ((a == 3) && (Atriplex<2))
 						Atriplex++;
+					if ((a == 4) && (Abashnia < 2))
+						Abashnia++;
 					continue;
 				}
 				else
@@ -870,6 +874,7 @@ class MyApp : public App
 						
 						shaders2.remove(shell);
 						mainhp -= gddos[gun].uron * 3;
+					
 						if (dviglo<2)
 							Adviglo++;
 						continue;
@@ -897,16 +902,20 @@ class MyApp : public App
 				sdvigvec.rotate(animhsangle);
 				if (dist(shell.pos(), mainhs.pos() + sdvigvec) <= hsddos[housing].diameter / 2)
 				{
-					int a = 0;
+					
 					shaders2.remove(shell);
 					myhp -= gddos[Agun].uron * 2;
-					a = randomInt(1, 3);
+					
+					int a = 0;
+					a = randomInt(1, 4);
 					if ((a == 1) && (bk<2))
 						bk++;
 					if ((a == 2) && (dulo<2))
 						dulo++;
 					if ((a == 3) && (triplex<2))
 						triplex++;
+					if ((a == 4) && (bashnia < 2))
+						bashnia++;
 					continue;
 				}
 				else
@@ -916,7 +925,7 @@ class MyApp : public App
 						
 						shaders2.remove(shell);
 						myhp -= gddos[Agun].uron * 3;
-						if(dviglo<2)
+						if (dviglo<2)
 							dviglo++;
 						continue;
 					}
