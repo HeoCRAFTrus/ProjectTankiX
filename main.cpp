@@ -1,9 +1,9 @@
 #include <gamebase/Gamebase.h>
-
+//
 using namespace gamebase;
 using namespace std;
 
-int stepn = 10;
+int stepn = 100;
 
 struct gundata
 {
@@ -329,7 +329,7 @@ class MyApp : public App
 			}
 		}
 
-		if (input.pressed('у') || input.pressed('e') || input.pressed('k') || input.pressed('л'))
+		if ((input.pressed('у') || input.pressed('e') || input.pressed('k') || input.pressed('л'))&&(bashnia<2))
 		{
 			maint.setAngle(maint.angle() - tddos[tower].tfov*timeDelta());
 			maing.setAngle(maing.angle() - tddos[tower].tfov*timeDelta());
@@ -338,7 +338,7 @@ class MyApp : public App
 			maing.setPos(gvec + maint.pos());
 		}
 
-		if (input.pressed('й') || input.pressed('q') || input.pressed('j') || input.pressed('о'))
+		if ((input.pressed('й') || input.pressed('q') || input.pressed('j') || input.pressed('о')) && (bashnia<2))
 		{
 			maint.setAngle(maint.angle() + tddos[tower].tfov*timeDelta());
 			maing.setAngle(maing.angle() + tddos[tower].tfov*timeDelta());
@@ -567,7 +567,260 @@ class MyApp : public App
 		animbhbphspbhbp.setPos(animhs.pos().x, animhs.pos().y + 50);
 		animbhbphspbhbp.child<GameObj>("hpb").setScaleX(ratio);
 		gamepole.setView(mainhs.pos());
+		//-------------------------------------------------------------------------------------------------------------вражеские модули
+		if (Adviglo != 0)
+		{
+			if (Adviglo == 1)
+			{
+				animbhbphspbhbp.child<Texture>("dvig").show();
+				animbhbphspbhbp.child<Texture>("dvig2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("dvig").hide();
+				animbhbphspbhbp.child<Texture>("dvig2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("dvig").hide();
+			animbhbphspbhbp.child<Texture>("dvig2").hide();
+		}
+		//--------------------------------радио
+		if (Aradio != 0)
+		{
+			if (Aradio == 1)
+			{
+				animbhbphspbhbp.child<Texture>("rad").show();
+				animbhbphspbhbp.child<Texture>("rad2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("rad").hide();
+				animbhbphspbhbp.child<Texture>("rad2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("rad").hide();
+			animbhbphspbhbp.child<Texture>("rad2").hide();
+		}
+		//--------------------------------триплекс
+		if (Atriplex != 0)
+		{
+			if (Atriplex == 1)
+			{
+				animbhbphspbhbp.child<Texture>("trip").show();
+				animbhbphspbhbp.child<Texture>("trip2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("trip").hide();
+				animbhbphspbhbp.child<Texture>("trip2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("trip").hide();
+			animbhbphspbhbp.child<Texture>("trip2").hide();
+		}
+		//--------------------------------гусеница
+		if (Agusliy != 0)
+		{
+			if (Agusliy == 1)
+			{
+				animbhbphspbhbp.child<Texture>("gus").show();
+				animbhbphspbhbp.child<Texture>("gus2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("gus").hide();
+				animbhbphspbhbp.child<Texture>("gus2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("gus").hide();
+			animbhbphspbhbp.child<Texture>("gus2").hide();
+		}
+		//--------------------------------боеукладка
+		if (Abk == 1)
+		{
+			animbhbphspbhbp.child<Texture>("bk").show();
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("bk").hide();
+		}
+		//--------------------------------башня
+		if (Abashnia != 0)
+		{
+			if (Abashnia == 1)
+			{
+				animbhbphspbhbp.child<Texture>("bus").show();
+				animbhbphspbhbp.child<Texture>("bus2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("bus").hide();
+				animbhbphspbhbp.child<Texture>("bus2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("bus").hide();
+			animbhbphspbhbp.child<Texture>("bus2").hide();
+		}
+		//--------------------------------дуло
+		if (Adulo != 0)
+		{
+			if (Adulo == 1)
+			{
+				animbhbphspbhbp.child<Texture>("ggun").show();
+				animbhbphspbhbp.child<Texture>("ggun2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("ggun").hide();
+				animbhbphspbhbp.child<Texture>("ggun2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("ggun").hide();
+			animbhbphspbhbp.child<Texture>("ggun2").hide();
+		}
+		//-----------------------------------------
 
+		animbhbphspbhbp.child<Layout>("Row").update();
+		//-------------------------------------------------------------------------------------------------------------наши модули
+		//--------------------------------двигатель
+		if (dviglo != 0)
+		{
+			if (dviglo == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("dvig").show();
+				mainbhbphspbhbp.child<Texture>("dvig2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("dvig").hide();
+				mainbhbphspbhbp.child<Texture>("dvig2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("dvig").hide();
+			mainbhbphspbhbp.child<Texture>("dvig2").hide();
+		}
+		//--------------------------------радио
+		if (radio != 0)
+		{
+			if (radio == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("rad").show();
+				mainbhbphspbhbp.child<Texture>("rad2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("rad").hide();
+				mainbhbphspbhbp.child<Texture>("rad2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("rad").hide();
+			mainbhbphspbhbp.child<Texture>("rad2").hide();
+		}
+		//--------------------------------триплекс
+		if (triplex != 0)
+		{
+			if (triplex == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("trip").show();
+				mainbhbphspbhbp.child<Texture>("trip2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("trip").hide();
+				mainbhbphspbhbp.child<Texture>("trip2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("trip").hide();
+			mainbhbphspbhbp.child<Texture>("trip2").hide();
+		}
+		//--------------------------------гусеница
+		if (gusliy != 0)
+		{
+			if (gusliy == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("gus").show();
+				mainbhbphspbhbp.child<Texture>("gus2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("gus").hide();
+				mainbhbphspbhbp.child<Texture>("gus2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("gus").hide();
+			mainbhbphspbhbp.child<Texture>("gus2").hide();
+		}
+		//--------------------------------боеукладка
+		if (bk == 1)
+		{
+			mainbhbphspbhbp.child<Texture>("bk").show();
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("bk").hide();
+		}
+		//--------------------------------башня
+		if (bashnia != 0)
+		{
+			if (bashnia == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("bus").show();
+				mainbhbphspbhbp.child<Texture>("bus2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("bus").hide();
+				mainbhbphspbhbp.child<Texture>("bus2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("bus").hide();
+			mainbhbphspbhbp.child<Texture>("bus2").hide();
+		}
+		//--------------------------------дуло
+		if (dulo != 0)
+		{
+			if (dulo == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("ggun").show();
+				mainbhbphspbhbp.child<Texture>("ggun2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("ggun").hide();
+				mainbhbphspbhbp.child<Texture>("ggun2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("ggun").hide();
+			mainbhbphspbhbp.child<Texture>("ggun2").hide();
+		}
+		//-----------------------------------------
+
+		mainbhbphspbhbp.child<Layout>("Row").update();
+		//---------------------------------------------------------------------------------------------------------------
 	}
 
 	void moveShells()
@@ -598,29 +851,31 @@ class MyApp : public App
 				sdvigvec.rotate(animhsangle);
 				if (dist(shell.pos(), animhs.pos() + sdvigvec) <= hsddos[Ahousing].diameter / 2)
 				{
-					int a = 0;
+					
 					shaders2.remove(shell);
 					mainhp -= gddos[gun].uron * 2;
-					a = randomInt(1, 2);
-					if ((a == 2) && (Abk<2))
+					
+					int a = 0;
+					a = randomInt(1, 4);
+					if ((a == 1) && (Abk<2))
 						Abk++;
-					a = randomInt(1, 2);
 					if ((a == 2) && (Adulo<2))
 						Adulo++;
-					a = randomInt(1, 2);
-					if ((a == 2) && (Atriplex<2))
+					if ((a == 3) && (Atriplex<2))
 						Atriplex++;
+					if ((a == 4) && (Abashnia < 2))
+						Abashnia++;
 					continue;
 				}
 				else
 				{
 					if (dist(shell.pos(), animhs.pos() - sdvigvec) <= hsddos[Ahousing].diameter / 2)
 					{
-						int a = 0;
+						
 						shaders2.remove(shell);
 						mainhp -= gddos[gun].uron * 3;
-						a = randomInt(1, 2);
-						if ((a == 2) && (Adviglo<2))
+					
+						if (dviglo<2)
 							Adviglo++;
 						continue;
 					}
@@ -647,29 +902,30 @@ class MyApp : public App
 				sdvigvec.rotate(animhsangle);
 				if (dist(shell.pos(), mainhs.pos() + sdvigvec) <= hsddos[housing].diameter / 2)
 				{
-					int a = 0;
+					
 					shaders2.remove(shell);
 					myhp -= gddos[Agun].uron * 2;
-					a = randomInt(1, 2);
-					if ((a == 2) && (bk<2))
+					
+					int a = 0;
+					a = randomInt(1, 4);
+					if ((a == 1) && (bk<2))
 						bk++;
-					a = randomInt(1, 2);
 					if ((a == 2) && (dulo<2))
 						dulo++;
-					a = randomInt(1, 2);
-					if ((a == 2) && (triplex<2))
+					if ((a == 3) && (triplex<2))
 						triplex++;
+					if ((a == 4) && (bashnia < 2))
+						bashnia++;
 					continue;
 				}
 				else
 				{
 					if (dist(shell.pos(), mainhs.pos() - sdvigvec) <= hsddos[housing].diameter / 2)
 					{
-						int a = 0;
+						
 						shaders2.remove(shell);
 						myhp -= gddos[Agun].uron * 3;
-						a = randomInt(1, 2);
-						if ((a == 2) && (dviglo<2))
+						if (dviglo<2)
 							dviglo++;
 						continue;
 					}
@@ -690,11 +946,12 @@ class MyApp : public App
 		{
 			auto spvec = Vec2(hsddos[Ahousing].hsspeed, 0.0);
 			spvec.rotate(animhsangle);
-
-			animhs.setPos(animhs.pos() + spvec * timeDelta());
+			if (Adviglo != 2)
+			{
+				animhs.setPos(animhs.pos() + spvec * timeDelta());
 			animt.setPos(animt.pos() + spvec * timeDelta());
 			animg.setPos(animg.pos() + spvec * timeDelta());
-
+		}
 			if (!(animhs.angle() <= angvec.angle() + 0.174 && animhs.angle() >= angvec.angle() - 0.174))
 			{
 				if (animhs.angle() < angvec.angle())
