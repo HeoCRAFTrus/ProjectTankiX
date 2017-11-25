@@ -234,10 +234,11 @@ class MyApp : public App
 		spvec.rotate(mainhsangle);
 		//-------------------------негативные еффекты
 
-		if (dulo == 1)
+		/*if (dulo == 1)
 		{
 			gddos[gun].gload * 2;
 		}
+		*/
 
 		//-------------------------вперед
 		if (input.pressed('ц') || input.pressed('w') && (dviglo != 2))
@@ -874,16 +875,33 @@ class MyApp : public App
 					shaders2.remove(shell);
 					mainhp -= gddos[gun].uron * 2;
 					
-					int a = 0;
-					a = randomInt(1, 4);
-					if ((a == 1) && (Abk<2))
-						Abk++;
-					if ((a == 2) && (Adulo<2))
-						Adulo++;
-					if ((a == 3) && (Atriplex<2))
-						Atriplex++;
-					if ((a == 4) && (Abashnia < 2))
-						Abashnia++;
+					
+					for (int aa = 1; aa != 0;)
+					{
+						int a = 0;
+						aa = 0;
+						a = randomInt(1, 4);
+
+						if ((a == 1) && (Abk < 2))
+							Abk++;
+						if ((a == 2) && (Adulo < 2))
+							Adulo++;
+						if ((a == 3) && (Atriplex < 2))
+							Atriplex++;
+						if ((a == 4) && (Abashnia < 2))
+							Abashnia++;
+
+						if ((a == 1) && (Abk == 2))
+							aa++;
+						if ((a == 2) && (Adulo == 2))
+							aa++;
+						if ((a == 3) && (Atriplex == 2))
+							aa++;
+						if ((a == 4) && (Abashnia == 2))
+							aa++;
+						if ((Abk == 2) && (Adulo == 2) && (Atriplex == 2) && (Abashnia == 2))
+						break;
+					}
 					continue;
 				}
 				else
@@ -894,7 +912,7 @@ class MyApp : public App
 						shaders2.remove(shell);
 						mainhp -= gddos[gun].uron * 3;
 					
-						if (dviglo<2)
+						if (Adviglo<2)
 							Adviglo++;
 						continue;
 					}
@@ -925,7 +943,11 @@ class MyApp : public App
 					shaders2.remove(shell);
 					myhp -= gddos[Agun].uron * 2;
 					
-					int a = 0;
+					
+					for (int aa = 1; aa != 0;)
+					{
+						int a = 0;
+						aa = 0;
 					a = randomInt(1, 4);
 					if ((a == 1) && (bk<2))
 						bk++;
@@ -935,6 +957,18 @@ class MyApp : public App
 						triplex++;
 					if ((a == 4) && (bashnia < 2))
 						bashnia++;
+
+					if ((a == 1) && (bk == 2))
+						aa++;
+					if ((a == 2) && (dulo == 2))
+						aa++;
+					if ((a == 3) && (triplex == 2))
+						aa++;
+					if ((a == 4) && (bashnia == 2))
+						aa++;
+					if ((bk == 2) && (dulo == 2) && (triplex == 2) && (bashnia == 2))
+						break;
+				}
 					continue;
 				}
 				else
@@ -961,16 +995,14 @@ class MyApp : public App
 	void moveAnim()
 	{
 		auto angvec = mainhs.pos() - animt.pos();
-		if (dist(mainhs.pos(), animhs.pos()) > 400)
+		if (dist(mainhs.pos(), animhs.pos()) > 400 && (Adviglo != 2))
 		{
 			auto spvec = Vec2(hsddos[Ahousing].hsspeed, 0.0);
 			spvec.rotate(animhsangle);
-			if (Adviglo != 2)
-			{
-				animhs.setPos(animhs.pos() + spvec * timeDelta());
+			animhs.setPos(animhs.pos() + spvec * timeDelta());
 			animt.setPos(animt.pos() + spvec * timeDelta());
 			animg.setPos(animg.pos() + spvec * timeDelta());
-		}
+
 			if (!(animhs.angle() <= angvec.angle() + 0.174 && animhs.angle() >= angvec.angle() - 0.174))
 			{
 				if (animhs.angle() < angvec.angle())
@@ -1007,7 +1039,7 @@ class MyApp : public App
 			}
 		}
 
-		if (!(animt.angle() <= angvec.angle() + 0.174 && animt.angle() >= angvec.angle() - 0.174))
+		if (!(animt.angle() <= angvec.angle() + 0.174 && animt.angle() >= angvec.angle() - 0.174)&&(Abashnia!=2))
 		{
 			if (animt.angle() < angvec.angle())
 			{
