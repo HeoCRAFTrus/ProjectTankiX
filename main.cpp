@@ -4,6 +4,7 @@ using namespace gamebase;
 using namespace std;
 
 int stepn = 100;
+int game = 0;
 
 struct gundata
 {
@@ -34,6 +35,10 @@ struct hsdata
 };
 class MyApp : public App
 {
+	void play()
+	{
+		game = 1;
+	}
 	////////////////////////////////////////////// //////////////////////////////////////////////
 	void load()
 	{
@@ -213,11 +218,20 @@ class MyApp : public App
 		animg.setPos(agvec + animt.pos());
 
 		rload.setScaleX(0);
+
+
+		/////кнопки
+		connect(newgame, play);
+		connect(exit, close);
 	}
 	////////////////////////////////////////////////////////////////////////////////////////////
 
 	void process(Input input)
 	{
+		//проверка переменной старта игры
+		if (game == 0)
+			return;
+
 		//////////////////////////////////////////////управление//////////////////////////////////////////////
 		using namespace InputKey;
         kishki_angara.hide();
@@ -1070,6 +1084,9 @@ class MyApp : public App
 
 	void move()
 	{
+		//проверка переменной старта игры
+		if (game == 0)
+			return;
 		for(int i=0;i<stepn;i++)
 		moveShells();
 		moveAnim();
@@ -1136,6 +1153,12 @@ class MyApp : public App
 	////////////////////////////////
 	FromDesign(GameView, gamepole);
 	LayerFromDesign(void, bhbp);
+
+	FromDesign(Button, newgame);
+	FromDesign(Button, loadgame);
+	FromDesign(Button, howtoplay);
+	FromDesign(Button, exit);
+	FromDesign(FilledRect, blk);
 
 	vector<gundata> gddos;
 	vector<tdata> tddos;

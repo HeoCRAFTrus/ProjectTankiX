@@ -524,7 +524,243 @@
                "value" : 0
             }
          },
-         "list" : [],
+         "list" : [
+            {
+               "_name" : "blk",
+               "_typeName" : "StaticFilledRect",
+               "box" : {
+                  "_typeName" : "RelativeBox",
+                  "height" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 0,
+                     "value" : 0
+                  },
+                  "offset" : {
+                     "_empty" : true
+                  },
+                  "width" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 0,
+                     "value" : 0
+                  }
+               },
+               "color" : [ 0, 0, 0, 0.8156862854957581 ],
+               "position" : {
+                  "_typeName" : "AligningOffset",
+                  "horAlign" : 1,
+                  "horOffset" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 1,
+                     "value" : 0
+                  },
+                  "vertAlign" : 1,
+                  "vertOffset" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 1,
+                     "value" : 0
+                  }
+               }
+            },
+            {
+               "_typeName" : "LinearLayout",
+               "list" : [
+                  {
+                     "_name" : "newgame",
+                     "_typeName" : "Button",
+                     "position" : {
+                        "_typeName" : "AligningOffset",
+                        "horAlign" : 1,
+                        "horOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        },
+                        "vertAlign" : 0,
+                        "vertOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        }
+                     },
+                     "skin" : {
+                        "_typeName" : "SimpleRectangleButtonSkin",
+                        "borderColor" : [ 0, 0, 0, 1 ],
+                        "borderWidth" : 1,
+                        "box" : {
+                           "_typeName" : "PixelBox",
+                           "height" : 48,
+                           "width" : 300
+                        },
+                        "fillColor" : [ 0.7843137383460999, 0.7843137383460999, 0.7843137383460999, 1 ],
+                        "font" : {
+                           "_typeName" : "FontDesc",
+                           "family" : "Arial",
+                           "size" : 32
+                        },
+                        "text" : "Новая игра",
+                        "textColor" : [ 0, 0, 0, 1 ],
+                        "useGradient" : true
+                     }
+                  },
+                  {
+                     "_name" : "loadgame",
+                     "_typeName" : "Button",
+                     "position" : {
+                        "_typeName" : "AligningOffset",
+                        "horAlign" : 1,
+                        "horOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        },
+                        "vertAlign" : 0,
+                        "vertOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : -30
+                        }
+                     },
+                     "skin" : {
+                        "_typeName" : "SimpleRectangleButtonSkin",
+                        "borderColor" : [ 0, 0, 0, 1 ],
+                        "borderWidth" : 1,
+                        "box" : {
+                           "_typeName" : "PixelBox",
+                           "height" : 48,
+                           "width" : 300
+                        },
+                        "fillColor" : [ 0.7843137383460999, 0.7843137383460999, 0.7843137383460999, 1 ],
+                        "font" : {
+                           "_typeName" : "FontDesc",
+                           "family" : "Arial",
+                           "size" : 32
+                        },
+                        "text" : "Загрузить игру",
+                        "textColor" : [ 0, 0, 0, 1 ],
+                        "useGradient" : true
+                     }
+                  },
+                  {
+                     "_name" : "howtoplay",
+                     "_typeName" : "Button",
+                     "position" : {
+                        "_typeName" : "AligningOffset",
+                        "horAlign" : 1,
+                        "horOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        },
+                        "vertAlign" : 0,
+                        "vertOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : -30
+                        }
+                     },
+                     "skin" : {
+                        "_typeName" : "SimpleRectangleButtonSkin",
+                        "borderColor" : [ 0, 0, 0, 1 ],
+                        "borderWidth" : 1,
+                        "box" : {
+                           "_typeName" : "PixelBox",
+                           "height" : 48,
+                           "width" : 300
+                        },
+                        "fillColor" : [ 0.7843137383460999, 0.7843137383460999, 0.7843137383460999, 1 ],
+                        "font" : {
+                           "_typeName" : "FontDesc",
+                           "family" : "Arial",
+                           "size" : 32
+                        },
+                        "text" : "Как играть",
+                        "textColor" : [ 0, 0, 0, 1 ],
+                        "useGradient" : true
+                     }
+                  },
+                  {
+                     "_name" : "exit",
+                     "_typeName" : "Button",
+                     "position" : {
+                        "_typeName" : "AligningOffset",
+                        "horAlign" : 1,
+                        "horOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : 0
+                        },
+                        "vertAlign" : 0,
+                        "vertOffset" : {
+                           "_typeName" : "RelativeValue",
+                           "type" : 1,
+                           "value" : -30
+                        }
+                     },
+                     "skin" : {
+                        "_typeName" : "SimpleRectangleButtonSkin",
+                        "borderColor" : [ 0, 0, 0, 1 ],
+                        "borderWidth" : 1,
+                        "box" : {
+                           "_typeName" : "PixelBox",
+                           "height" : 48,
+                           "width" : 300
+                        },
+                        "fillColor" : [ 0.7843137383460999, 0.7843137383460999, 0.7843137383460999, 1 ],
+                        "font" : {
+                           "_typeName" : "FontDesc",
+                           "family" : "Arial",
+                           "size" : 32
+                        },
+                        "text" : " Выход",
+                        "textColor" : [ 0, 0, 0, 1 ],
+                        "useGradient" : true
+                     }
+                  }
+               ],
+               "position" : {
+                  "_typeName" : "AligningOffset",
+                  "horAlign" : 1,
+                  "horOffset" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 1,
+                     "value" : 0
+                  },
+                  "vertAlign" : 1,
+                  "vertOffset" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 1,
+                     "value" : 0
+                  }
+               },
+               "skin" : {
+                  "_typeName" : "VerticalLayoutSkin",
+                  "adjustment" : 1,
+                  "align" : 1,
+                  "box" : {
+                     "_typeName" : "RelativeBox",
+                     "height" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 0,
+                        "value" : 0
+                     },
+                     "offset" : {
+                        "_empty" : true
+                     },
+                     "width" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 0,
+                        "value" : 0
+                     }
+                  },
+                  "padding" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 1,
+                     "value" : -30
+                  }
+               },
+               "skipInvisibleElements" : false
+            }
+         ],
          "position" : {
             "_typeName" : "AligningOffset",
             "horAlign" : 1,
