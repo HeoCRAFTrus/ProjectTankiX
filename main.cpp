@@ -41,6 +41,14 @@ class MyApp : public App
 		stolb1.hide();
 		blk.hide();
 	}
+	
+	void hidem()
+	{
+		stolb1.show();
+		blk.show();
+		game = 0;
+	}
+
 	////////////////////////////////////////////// //////////////////////////////////////////////
 	void load()
 	{
@@ -233,7 +241,6 @@ class MyApp : public App
 		//проверка переменной старта игры
 		if (game == 0)
 			return;
-
 		//////////////////////////////////////////////управление//////////////////////////////////////////////
 		using namespace InputKey;
         kishki_angara.hide();
@@ -391,6 +398,11 @@ class MyApp : public App
 			shellCreate.setPos(maing.pos());
 			//rload.setSizes(gddos[gun].gload/1000*timeDelta(), 20);
 		}
+
+		//-----------------------------------пауза
+		if (input.pressed(Y))
+			hidem;
+
 		//перезарядка
 		rtm = shellTimer.time() / gddos[gun].gload;
 		if (rtm >= 1)
