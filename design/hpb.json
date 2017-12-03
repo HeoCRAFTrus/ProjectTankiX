@@ -503,6 +503,262 @@
                         "value" : 0
                      }
                   }
+               }
+            ],
+            "position" : {
+               "_typeName" : "AligningOffset",
+               "horAlign" : 1,
+               "horOffset" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 0
+               },
+               "vertAlign" : 1,
+               "vertOffset" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 15
+               }
+            },
+            "skin" : {
+               "_typeName" : "HorizontalLayoutSkin",
+               "adjustment" : 1,
+               "align" : 1,
+               "box" : {
+                  "_typeName" : "RelativeBox",
+                  "height" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 0,
+                     "value" : 0
+                  },
+                  "offset" : {
+                     "_empty" : true
+                  },
+                  "width" : {
+                     "_typeName" : "RelativeValue",
+                     "type" : 0,
+                     "value" : 0
+                  }
+               },
+               "padding" : {
+                  "_typeName" : "RelativeValue",
+                  "type" : 1,
+                  "value" : 5
+               }
+            },
+            "skipInvisibleElements" : true
+         },
+         {
+            "_name" : "Row2",
+            "_typeName" : "LinearLayout",
+            "list" : [
+               {
+                  "_name" : "rldr2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\rloder2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "rldr",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\rloder.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "egnr2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\engener2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "egnr",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\engener.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "gner2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\gunner2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "gner",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\gunner.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "drv2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\driver2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "drv",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\driver.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
                },
                {
                   "_name" : "com",
@@ -607,214 +863,6 @@
                         "value" : 0
                      }
                   }
-               },
-               {
-                  "_name" : "drv",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\driver.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "drv2",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\driver2.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "gner",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\gunner.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "gner2",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\gunner2.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "egnr",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\engener.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "egnr2",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\engener2.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "rldr",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\rloder.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
-               },
-               {
-                  "_name" : "rldr2",
-                  "_typeName" : "StaticTextureRect",
-                  "box" : {
-                     "_typeName" : "PixelBox",
-                     "height" : 32,
-                     "width" : 32
-                  },
-                  "color" : [ 1, 1, 1, 1 ],
-                  "imageName" : "экипаж\\rloder2.png",
-                  "position" : {
-                     "_typeName" : "AligningOffset",
-                     "horAlign" : 0,
-                     "horOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 5
-                     },
-                     "vertAlign" : 1,
-                     "vertOffset" : {
-                        "_typeName" : "RelativeValue",
-                        "type" : 1,
-                        "value" : 0
-                     }
-                  }
                }
             ],
             "position" : {
@@ -829,7 +877,7 @@
                "vertOffset" : {
                   "_typeName" : "RelativeValue",
                   "type" : 1,
-                  "value" : 15
+                  "value" : 50
                }
             },
             "skin" : {
@@ -858,7 +906,7 @@
                   "value" : 5
                }
             },
-            "skipInvisibleElements" : true
+            "skipInvisibleElements" : false
          }
       ],
       "position" : {
