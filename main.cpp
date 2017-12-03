@@ -672,6 +672,125 @@ class MyApp : public App
 
 		mainbhbphspbhbp.child<Layout>("Row").update();
 
+		//////////////////////////////////////////////наш экипаж//////////////////////////////////////////////
+		//--------------------------------водила
+		/*	if ( != 0)
+		{
+		if ( == 1)
+		{
+		mainbhbphspbhbp.child<Texture>("").show();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").show();
+		}
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		//--------------------------------радист
+		if ( != 0)
+		{
+		if ( == 1)
+		{
+		mainbhbphspbhbp.child<Texture>("").show();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").show();
+		}
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		//--------------------------------инженер
+		if ( != 0)
+		{
+		if ( == 1)
+		{
+		mainbhbphspbhbp.child<Texture>("").show();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").show();
+		}
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		//--------------------------------командир
+		if ( != 0)
+		{
+		if ( == 1)
+		{
+		mainbhbphspbhbp.child<Texture>("").show();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").show();
+		}
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		//--------------------------------наводчик
+		if ( != 0)
+		{
+		if ( == 1)
+		{
+		mainbhbphspbhbp.child<Texture>("").show();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").show();
+		}
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		//--------------------------------заряжающий
+		if ( != 0)
+		{
+		if ( == 1)
+		{
+		mainbhbphspbhbp.child<Texture>("").show();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").show();
+		}
+		}
+		else
+		{
+		mainbhbphspbhbp.child<Texture>("").hide();
+		mainbhbphspbhbp.child<Texture>("").hide();
+		}
+		//-----------------------------------------
+
+		mainbhbphspbhbp.child<Layout>("Row").update(); */
+
 		//////////////////////////////////////////////противник/////////////////////////////////////////////
 
 
