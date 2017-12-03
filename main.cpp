@@ -38,6 +38,8 @@ class MyApp : public App
 	void play()
 	{
 		game = 1;
+		stolb1.hide();
+		blk.hide();
 	}
 	////////////////////////////////////////////// //////////////////////////////////////////////
 	void load()
@@ -722,6 +724,7 @@ class MyApp : public App
 		}
 		}
 		*/
+
 		mainbhbphspbhbp.setPos(mainhs.pos().x, mainhs.pos().y + 50);
 		mainbhbphspbhbp.child<GameObj>("hpb").setScaleX(myratio);
 		animbhbphspbhbp.setPos(animhs.pos().x, animhs.pos().y + 50);
@@ -1150,7 +1153,7 @@ class MyApp : public App
 	int Adulo;
 	int Abk;
 	int Aradio;
-	////////////////////////////////
+	///////////////////////////////
 	FromDesign(GameView, gamepole);
 	LayerFromDesign(void, bhbp);
 
@@ -1159,6 +1162,7 @@ class MyApp : public App
 	FromDesign(Button, howtoplay);
 	FromDesign(Button, exit);
 	FromDesign(FilledRect, blk);
+	FromDesign(Layout, stolb1);
 
 	vector<gundata> gddos;
 	vector<tdata> tddos;
