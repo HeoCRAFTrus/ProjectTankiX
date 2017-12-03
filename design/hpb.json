@@ -605,6 +605,58 @@
                   }
                },
                {
+                  "_name" : "egnr2",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\engener2.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
+                  "_name" : "egnr",
+                  "_typeName" : "StaticTextureRect",
+                  "box" : {
+                     "_typeName" : "PixelBox",
+                     "height" : 32,
+                     "width" : 32
+                  },
+                  "color" : [ 1, 1, 1, 1 ],
+                  "imageName" : "экипаж\\engener.png",
+                  "position" : {
+                     "_typeName" : "AligningOffset",
+                     "horAlign" : 0,
+                     "horOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 5
+                     },
+                     "vertAlign" : 1,
+                     "vertOffset" : {
+                        "_typeName" : "RelativeValue",
+                        "type" : 1,
+                        "value" : 0
+                     }
+                  }
+               },
+               {
                   "_name" : "gner2",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
@@ -761,7 +813,7 @@
                   }
                },
                {
-                  "_name" : "radd",
+                  "_name" : "rad",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
                      "_typeName" : "PixelBox",
@@ -787,7 +839,7 @@
                   }
                },
                {
-                  "_name" : "radd2",
+                  "_name" : "rad2",
                   "_typeName" : "StaticTextureRect",
                   "box" : {
                      "_typeName" : "PixelBox",
