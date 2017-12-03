@@ -1243,6 +1243,7 @@ class MyApp : public App
 	GameObj maing;
 	Timer shellTimer;
 	float rtm;
+	///////////////////////модули
 	int gusliy;
 	int dviglo;
 	int bashnia;
@@ -1250,6 +1251,12 @@ class MyApp : public App
 	int dulo;
 	int bk;
 	int radio;
+	///////////////////////экипаж
+	int com;
+	int zar;
+	int raddist;
+	int mesh_vod;
+	int navod;
 
 	//////// противник
 	float Amainhsangle;
@@ -1265,6 +1272,7 @@ class MyApp : public App
 	float mainhp;
 	Timer AshellTimer;
 	float artm;
+	///////////////////////модули
 	int Agusliy;
 	int Adviglo;
 	int Abashnia;
@@ -1272,6 +1280,12 @@ class MyApp : public App
 	int Adulo;
 	int Abk;
 	int Aradio;
+	///////////////////////экипаж
+	int Acom;
+	int Azar;
+	int Araddist;
+	int Amesh_vod;
+	int Anavod;
 	///////////////////////////////
 	FromDesign(GameView, gamepole);
 	LayerFromDesign(void, bhbp);
