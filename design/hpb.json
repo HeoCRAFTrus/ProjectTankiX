@@ -854,7 +854,7 @@
                   "value" : 5
                }
             },
-            "skipInvisibleElements" : false
+            "skipInvisibleElements" : true
          }
       ],
       "position" : {

@@ -1224,6 +1224,19 @@ class MyApp : public App
 					
 					shaders2.remove(shell);
 					mainhp -= gddos[gun].uron * 2;
+					for (int aa = 1; aa != 0;)
+					{
+						int a = 0;
+						aa = 0;
+						a = randomInt(1, 2);
+
+						if ((a == 1) && (Araddist < 2))
+							Araddist++;
+						if ((a == 2) && (Amesh_vod < 2))
+							Amesh_vod++;
+						if ((Araddist == 2) && (Amesh_vod == 2))
+							break;
+					}
 					
 					
 					for (int aa = 1; aa != 0;)
@@ -1251,6 +1264,21 @@ class MyApp : public App
 							aa++;
 						if ((Abk == 2) && (Adulo == 2) && (Atriplex == 2) && (Abashnia == 2))
 						break;
+					}
+					for (int aa = 1; aa != 0;)
+					{
+						int a = 0;
+						aa = 0;
+						a = randomInt(1, 2);
+
+						if ((a == 1) && (Acom < 2))
+							Acom++;
+						if ((a == 2) && (Azar < 2))
+							Azar++;
+						if ((a == 2) && (Anavod < 2))
+							Anavod++;
+						if ((Anavod == 2) && (Azar == 2) && (Acom == 2))
+							break;
 					}
 					continue;
 				}
@@ -1352,10 +1380,16 @@ class MyApp : public App
 			animhs.setPos(animhs.pos() + spvec * timeDelta());
 			animt.setPos(animt.pos() + spvec * timeDelta());
 			animg.setPos(animg.pos() + spvec * timeDelta());
-
-			if (!(animhs.angle() <= angvec.angle() + 0.174 && animhs.angle() >= angvec.angle() - 0.174))
+			auto deltaGrad= abs(animhs.angle() - angvec.angle());
+			bool vuchisl = false;
+			if (deltaGrad > 3.1415926535897932384626433832795)
 			{
-				if (animhs.angle() < angvec.angle())
+				deltaGrad = 2 * 3.1415926535897932384626433832795 -deltaGrad;
+				vuchisl = true;
+			}
+			if (deltaGrad>0.174)
+			{
+				if (animhs.angle() < angvec.angle()&& (!vuchisl))
 				{
 
 					auto tvec = Vec2(10.0, 0.0);
