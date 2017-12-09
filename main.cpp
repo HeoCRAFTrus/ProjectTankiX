@@ -42,7 +42,7 @@ class MyApp : public App
 		blk.hide();
 	}
 	
-	void hidem()
+	void stopgame()
 	{
 		stolb1.show();
 		blk.show();
@@ -64,6 +64,11 @@ class MyApp : public App
 		tower = 0;
 		gun = 0;
 		housingm = 0;
+		Acom = 0;
+		Azar = 0;
+		Araddist = 0;
+		Amesh_vod = 0;
+		Anavod = 0;
 		//////////////////////////////// орудия
 		gundata d;
 		d.nameg = "g1.json";
@@ -401,8 +406,9 @@ class MyApp : public App
 
 		//-----------------------------------пауза
 		if (input.pressed(Y))
-			hidem;
-
+		{
+			stopgame();
+		}
 		//перезарядка
 		rtm = shellTimer.time() / gddos[gun].gload;
 		if (rtm >= 1)
@@ -554,7 +560,104 @@ class MyApp : public App
 			myhp = hsddos[housingm].hp;
 		}
 		//cout << animt.angle() << " -> " << angvec.angle() << endl;
+		//////////////////////////////////////////////наш экипаж//////////////////////////////////////////////
+		if (com != 0)
+		{
+			if (com == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("com").show();
+				mainbhbphspbhbp.child<Texture>("com2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("com").hide();
+				mainbhbphspbhbp.child<Texture>("com2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("com").hide();
+			mainbhbphspbhbp.child<Texture>("com2").hide();
+		}
+		//--------------------------------радист
+		if (raddist != 0)
+		{
+			if (raddist == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("radd").show();
+				mainbhbphspbhbp.child<Texture>("radd2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("radd").hide();
+				mainbhbphspbhbp.child<Texture>("radd2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("radd").hide();
+			mainbhbphspbhbp.child<Texture>("radd2").hide();
+		}
+		//--------------------------------заряжающий
+		if (zar != 0)
+		{
+			if (zar == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("rldr").show();
+				mainbhbphspbhbp.child<Texture>("rldr2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("rldr").hide();
+				mainbhbphspbhbp.child<Texture>("rldr2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("rldr").hide();
+			mainbhbphspbhbp.child<Texture>("rldr2").hide();
+		}
+		//--------------------------------мех-вод
+		if (mesh_vod != 0)
+		{
+			if (mesh_vod == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("drv").show();
+				mainbhbphspbhbp.child<Texture>("drv2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("drv").hide();
+				mainbhbphspbhbp.child<Texture>("drv2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("drv").hide();
+			mainbhbphspbhbp.child<Texture>("drv2").hide();
+		}
 
+		//--------------------------------наводчик
+		if (navod != 0)
+		{
+			if (navod == 1)
+			{
+				mainbhbphspbhbp.child<Texture>("gner").show();
+				mainbhbphspbhbp.child<Texture>("gner2").hide();
+			}
+			else
+			{
+				mainbhbphspbhbp.child<Texture>("gner").hide();
+				mainbhbphspbhbp.child<Texture>("gner2").show();
+			}
+		}
+		else
+		{
+			mainbhbphspbhbp.child<Texture>("gner").hide();
+			mainbhbphspbhbp.child<Texture>("gner2").hide();
+		}
+
+		mainbhbphspbhbp.child<Layout>("Row2").update();
 		
 		//////////////////////////////////////////////наши модули//////////////////////////////////////////////
 		//--------------------------------двигатель
@@ -987,8 +1090,107 @@ class MyApp : public App
 		
 
 		animbhbphspbhbp.child<Layout>("Row").update();
+		//////////////////////////////////////////////вражиский экипаж//////////////////////////////////////////////
+		if (Acom != 0)
+		{
+			if (Acom == 1)
+			{
+				animbhbphspbhbp.child<Texture>("com").show();
+				animbhbphspbhbp.child<Texture>("com2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("com").hide();
+				animbhbphspbhbp.child<Texture>("com2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("com").hide();
+			animbhbphspbhbp.child<Texture>("com2").hide();
+		}
+		//--------------------------------радист
+		if (Araddist != 0)
+		{
+			if (Araddist == 1)
+			{
+				animbhbphspbhbp.child<Texture>("radd").show();
+				animbhbphspbhbp.child<Texture>("radd2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("radd").hide();
+				animbhbphspbhbp.child<Texture>("radd2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("radd").hide();
+			animbhbphspbhbp.child<Texture>("radd2").hide();
+		}
+		//--------------------------------заряжающий
+		if (Azar != 0)
+		{
+			if (Azar == 1)
+			{
+				animbhbphspbhbp.child<Texture>("rldr").show();
+				animbhbphspbhbp.child<Texture>("rldr2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("rldr").hide();
+				animbhbphspbhbp.child<Texture>("rldr2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("rldr").hide();
+			animbhbphspbhbp.child<Texture>("rldr2").hide();
+		}
+		//--------------------------------мех-вод
+		if (Amesh_vod != 0)
+		{
+			if (Amesh_vod == 1)
+			{
+				animbhbphspbhbp.child<Texture>("drv").show();
+				animbhbphspbhbp.child<Texture>("drv2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("drv").hide();
+				animbhbphspbhbp.child<Texture>("drv2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("drv").hide();
+			animbhbphspbhbp.child<Texture>("drv2").hide();
+		}
+
+		//--------------------------------наводчик
+		if (Anavod != 0)
+		{
+			if (Anavod == 1)
+			{
+				animbhbphspbhbp.child<Texture>("gner").show();
+				animbhbphspbhbp.child<Texture>("gner2").hide();
+			}
+			else
+			{
+				animbhbphspbhbp.child<Texture>("gner").hide();
+				animbhbphspbhbp.child<Texture>("gner2").show();
+			}
+		}
+		else
+		{
+			animbhbphspbhbp.child<Texture>("gner").hide();
+			animbhbphspbhbp.child<Texture>("gner2").hide();
+		}
+
+		animbhbphspbhbp.child<Layout>("Row2").update();
 		////////////////////////////////////////////////////////////////////////////////////////////
 	}
+	
 
 	//////////////////////////////////////////////физика снарядов//////////////////////////////////////////////
 	void moveShells()
