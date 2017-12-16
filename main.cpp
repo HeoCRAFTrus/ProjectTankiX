@@ -269,7 +269,7 @@ class MyApp : public App
 		*/
 
 		//-------------------------вперед
-		if (input.pressed('ц') || input.pressed('w') && (dviglo != 2))
+		if (input.pressed(W) && (dviglo != 2) && (mesh_vod != 2))
 		{
 			mainhs.setPos(mainhs.pos() + spvec * timeDelta());
 			maint.setPos(maint.pos() + spvec * timeDelta());
@@ -289,7 +289,7 @@ class MyApp : public App
             }
 		}
 		//---------------------------------назад
-		if (input.pressed('ы') || input.pressed('s') && (dviglo != 2))
+		if (input.pressed(S) && (dviglo != 2) && (mesh_vod != 2))
 		{
 			mainhs.setPos(mainhs.pos() - spvec * timeDelta());
 			maint.setPos(maint.pos() - spvec * timeDelta());
@@ -322,7 +322,7 @@ class MyApp : public App
 
 		
 		//------------------------------------влево
-		if (input.pressed(A))
+		if (input.pressed(A)&& (dviglo !=2) && (mesh_vod != 2))
 		{
 			auto tvec = Vec2(10.0, 0.0);
 			mainhsangle += 3.14 * timeDelta();
@@ -345,7 +345,7 @@ class MyApp : public App
 			}
 		}
 		//-------------------------------------вправо
-		if (input.pressed(D))
+		if (input.pressed(D) && (dviglo != 2) && (mesh_vod != 2))
 		{
 			auto tvec = Vec2(10.0, 0.0);
 			mainhsangle -= 3.14 * timeDelta();
@@ -405,7 +405,7 @@ class MyApp : public App
 		}
 
 		//-----------------------------------пауза
-		if (input.pressed(Y))
+		if (input.pressed(Escape))
 		{
 			stopgame();
 		}
@@ -1303,12 +1303,18 @@ class MyApp : public App
 			}
 			if (dist(shell.pos(), mainhs.pos()) <= hsddos[housing].diameter / 2)
 			{
-				int a = 0;
+				int aa = 0;
 				shaders2.remove(shell);
 				myhp -= gddos[Agun].uron;
-				a = randomInt(1, 2);
-				if ((a == 2) && (radio<2))
+				aa = randomInt(1, 2);
+				if ((aa == 2) && (radio<2))
 					radio++;
+				if ((aa == 1) && (raddist < 2))
+					raddist++;
+				if ((aa == 2) && (mesh_vod < 2))
+					mesh_vod++;
+				if ((raddist == 2) && (mesh_vod == 2))
+					break;
 				continue;
 			}
 			else
@@ -1346,6 +1352,22 @@ class MyApp : public App
 						aa++;
 					if ((bk == 2) && (dulo == 2) && (triplex == 2) && (bashnia == 2))
 						break;
+						for (int aa = 1; aa != 0;)
+						{
+							int a = 0;
+							aa = 0;
+							a = randomInt(1, 2);
+
+							if ((a == 1) && (com < 2))
+								com++;
+							if ((a == 2) && (zar < 2))
+								zar++;
+							if ((a == 2) && (navod < 2))
+								navod++;
+							if ((navod == 2) && (zar == 2) && (com == 2))
+								break;
+						}
+					continue;
 				}
 					continue;
 				}
