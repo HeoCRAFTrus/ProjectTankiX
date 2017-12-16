@@ -1389,7 +1389,7 @@ class MyApp : public App
 			}
 			if (deltaGrad>0.174)
 			{
-				if (animhs.angle() < angvec.angle()&& (!vuchisl))
+				if ((animhs.angle() < angvec.angle()&& (!vuchisl))|| (animhs.angle() > angvec.angle() && (vuchisl)))
 				{
 
 					auto tvec = Vec2(10.0, 0.0);
@@ -1423,30 +1423,42 @@ class MyApp : public App
 			}
 		}
 
-		if (!(animt.angle() <= angvec.angle() + 0.174 && animt.angle() >= angvec.angle() - 0.174)&&(Abashnia!=2))
+		if (Abashnia!=2)
 		{
-			if (animt.angle() < angvec.angle())
+			auto deltaGrad= abs(animt.angle() - angvec.angle());
+			bool vuchisl = false;
+			if (deltaGrad > 3.1415926535897932384626433832795)
 			{
-				animt.setAngle(animt.angle() + tddos[Atower].tfov*timeDelta());
-				animg.setAngle(animg.angle() + tddos[Atower].tfov*timeDelta());
-				auto gvec = gddos[Agun].sg + tddos[Atower].sgt;
-				gvec.rotate(animt.angle());
-				animg.setPos(gvec + animt.pos());
-				if (animt.angle() > 3.1415926535897932384626433832795)
-				{
-					animt.setAngle(animt.angle() - 2 * 3.1415926535897932384626433832795);
-				}
+				deltaGrad = 2 * 3.1415926535897932384626433832795 - deltaGrad;
+				vuchisl = true;
 			}
-			else
+			if (deltaGrad > 0.174)
 			{
-				animt.setAngle(animt.angle() - tddos[Atower].tfov*timeDelta());
-				animg.setAngle(animg.angle() - tddos[Atower].tfov*timeDelta());
-				auto gvec = gddos[Agun].sg - tddos[Atower].sgt;
-				gvec.rotate(animt.angle());
-				animg.setPos(gvec + animt.pos());
-				if (animt.angle() < -3.1415926535897932384626433832795)
+				if ((animt.angle() < angvec.angle() && (!vuchisl))|| (animt.angle() > angvec.angle() && (vuchisl)))
 				{
-					animt.setAngle(animt.angle() + 2 * 3.1415926535897932384626433832795);
+					animt.setAngle(animt.angle() + tddos[Atower].tfov*timeDelta());
+					animg.setAngle(animg.angle() + tddos[Atower].tfov*timeDelta());
+					auto gvec = gddos[Agun].sg + tddos[Atower].sgt;
+					gvec.rotate(animt.angle());
+
+					animg.setPos(gvec + animt.pos());
+
+					if (animt.angle() > 3.1415926535897932384626433832795)
+					{
+						animt.setAngle(animt.angle() - 2 * 3.1415926535897932384626433832795);
+					}
+				}
+				else
+				{
+					animt.setAngle(animt.angle() - tddos[Atower].tfov*timeDelta());
+					animg.setAngle(animg.angle() - tddos[Atower].tfov*timeDelta());
+					auto gvec = gddos[Agun].sg - tddos[Atower].sgt;
+					gvec.rotate(animt.angle());
+					animg.setPos(gvec + animt.pos());
+					if (animt.angle() < -3.1415926535897932384626433832795)
+					{
+						animt.setAngle(animt.angle() + 2 * 3.1415926535897932384626433832795);
+					}
 				}
 			}
 		}
