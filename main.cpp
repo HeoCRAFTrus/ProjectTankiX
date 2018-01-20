@@ -32,6 +32,7 @@ struct hsdata
 	float diameter;
 	float sdvig;
 	int hp;
+	float uskr;
 };
 class MyApp : public App
 {
@@ -137,6 +138,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 300;
+		dhs.uskr = 200;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 5000;
@@ -146,6 +148,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 200;
+		dhs.uskr = 10;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 5500;
@@ -155,6 +158,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 200;
+		dhs.uskr = 10;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 4000;
@@ -164,6 +168,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 400;
+		dhs.uskr = 10;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 4500;
@@ -173,6 +178,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 100;
+		dhs.uskr = 10;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 7000;
@@ -182,6 +188,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 100;
+		dhs.uskr = 10;
 		dhs.diameter = 61;
 		dhs.sdvig = 23;
 		dhs.hp = 10000;
@@ -215,6 +222,7 @@ class MyApp : public App
 		dulo=0;
 		bk=0;
 		radio=0;
+		
 
 		auto tvec = Vec2(10.0, 0.0);
 		tvec.rotate(animhs.angle());
@@ -257,9 +265,12 @@ class MyApp : public App
 			myhp = 0;
 		if (mainhp <= 0)
 			mainhp = 0;
-
+		
+        auto uskr = hsddos[housingm].uskr;
 		auto spvec = Vec2(hsddos[housingm].hsspeed, 0.0);
+		//auto tormvec = Vec2(hsddos[housingm].uskr, 0.0);
 		spvec.rotate(mainhsangle);
+		//tormvec.rotate(mainhsangle);
 		//-------------------------негативные еффекты
 
 		/*if (dulo == 1)
@@ -267,13 +278,16 @@ class MyApp : public App
 			gddos[gun].gload * 2;
 		}
 		*/
+        mainhs.move(spidomer * timeDelta());
+        maint.move(spidomer * timeDelta());
+        maing.move(spidomer * timeDelta());
 
 		//-------------------------вперед
 		if (input.pressed(W) && (dviglo != 2) && (mesh_vod != 2))
-		{
-			mainhs.setPos(mainhs.pos() + spvec * timeDelta());
-			maint.setPos(maint.pos() + spvec * timeDelta());
-			maing.setPos(maing.pos() + spvec * timeDelta());
+        {
+            //spidomer += tormvec;
+            spidomer += (polarVec(uskr, mainhs.angle()))*timeDelta();
+			
 			if (mainhs.box().intersects(wall1.box()) || mainhs.box().intersects(wall2.box()))
 			{
                 kishki_angara.show();
@@ -291,9 +305,7 @@ class MyApp : public App
 		//---------------------------------назад
 		if (input.pressed(S) && (dviglo != 2) && (mesh_vod != 2))
 		{
-			mainhs.setPos(mainhs.pos() - spvec * timeDelta());
-			maint.setPos(maint.pos() - spvec * timeDelta());
-			maing.setPos(maing.pos() - spvec * timeDelta());
+            spidomer -= (polarVec(uskr, mainhs.angle()))*timeDelta();
 			if (mainhs.box().intersects(wall1.box()) || mainhs.box().intersects(wall2.box()))
 			{
                 kishki_angara.show();
@@ -320,10 +332,20 @@ class MyApp : public App
             angar.show();
         }
 
-		
+        if (!input.pressed(W) && !input.pressed(S))
+        {
+            if (spidomer.length() > 0)
+            {
+                spidomer -= spidomer*timeDelta();
+            }
+        }
+        if (spidomer.length() > hsddos[housingm].hsspeed)
+            spidomer = (polarVec(hsddos[housingm].hsspeed, mainhs.angle()));
 		//------------------------------------влево
 		if (input.pressed(A)&& (dviglo !=2) && (mesh_vod != 2))
 		{
+
+
 			auto tvec = Vec2(10.0, 0.0);
 			mainhsangle += 3.14 * timeDelta();
 			mainhs.setAngle(mainhsangle);
@@ -369,7 +391,7 @@ class MyApp : public App
 		}
 		
 		//--------------------------------------башня вправо
-		if ((input.pressed(E) || input.pressed(K))&&(bashnia<2))
+		if ((input.pressed(E) || input.pressed(K))&&((bashnia<2)||(navod<2)))
 		{
 			maint.setAngle(maint.angle() - tddos[tower].tfov*timeDelta());
 			maing.setAngle(maing.angle() - tddos[tower].tfov*timeDelta());
@@ -379,7 +401,7 @@ class MyApp : public App
 		}
 
 		//---------------------------------------башня влево
-		if ((input.pressed(Q) || input.pressed(J)) && (bashnia<2))
+		if ((input.pressed(Q) || input.pressed(J)) && ((bashnia<2) || (navod<2)))
 		{
 			maint.setAngle(maint.angle() + tddos[tower].tfov*timeDelta());
 			maing.setAngle(maing.angle() + tddos[tower].tfov*timeDelta());
@@ -389,13 +411,13 @@ class MyApp : public App
 		}
 		/*
 		if (maint.angle() > 6.28)
-		maint.setAngle(0);
+		maint.setAngle(0); 
 		//	if (maint.angle() == -3.14)
 		//		maint.setAngle(3.14);
 		*/
 
 		//-----------------------------------выстрел
-		if ((input.pressed(Space)) && (shellTimer.time() > gddos[gun].gload) && (dulo != 2))
+		if ((input.pressed(Space)) && (shellTimer.time() > gddos[gun].gload) && ((dulo != 2) || (zar<2)))
 		{
 			shellTimer.start();
 			auto shellCreate = shaders2.load("shell.json");
@@ -1525,6 +1547,7 @@ class MyApp : public App
 	GameObj maing;
 	Timer shellTimer;
 	float rtm;
+    Vec2 spidomer;
 	///////////////////////модули
 	int gusliy;
 	int dviglo;
