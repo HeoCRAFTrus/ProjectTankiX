@@ -148,7 +148,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 200;
-		dhs.uskr = 10;
+		dhs.uskr = 200;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 5500;
@@ -158,7 +158,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 200;
-		dhs.uskr = 10;
+		dhs.uskr = 200;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 4000;
@@ -168,7 +168,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 400;
-		dhs.uskr = 10;
+		dhs.uskr = 200;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 4500;
@@ -178,7 +178,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 100;
-		dhs.uskr = 10;
+		dhs.uskr = 200;
 		dhs.diameter = 35;
 		dhs.sdvig = 17;
 		dhs.hp = 7000;
@@ -188,7 +188,7 @@ class MyApp : public App
 		dhs.shs = Vec2(0.0, 0.0);
 		dhs.hsfov = 3.14;
 		dhs.hsspeed = 100;
-		dhs.uskr = 10;
+		dhs.uskr = 200;
 		dhs.diameter = 61;
 		dhs.sdvig = 23;
 		dhs.hp = 10000;
