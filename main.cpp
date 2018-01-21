@@ -287,6 +287,8 @@ class MyApp : public App
         {
             //spidomer += tormvec;
             spidomer += (polarVec(uskr, mainhs.angle()))*timeDelta();
+			if (spidomer.length() > hsddos[housingm].hsspeed)
+				spidomer = (polarVec(hsddos[housingm].hsspeed, mainhs.angle()));
 			
 			if (mainhs.box().intersects(wall1.box()) || mainhs.box().intersects(wall2.box()))
 			{
@@ -306,6 +308,8 @@ class MyApp : public App
 		if (input.pressed(S) && (dviglo != 2) && (mesh_vod != 2))
 		{
             spidomer -= (polarVec(uskr, mainhs.angle()))*timeDelta();
+			if (spidomer.length() > hsddos[housingm].hsspeed)
+				spidomer = (polarVec(hsddos[housingm].hsspeed, mainhs.angle()-3.14));
 			if (mainhs.box().intersects(wall1.box()) || mainhs.box().intersects(wall2.box()))
 			{
                 kishki_angara.show();
@@ -338,13 +342,17 @@ class MyApp : public App
             {
                 spidomer -= spidomer*timeDelta();
             }
+			if (spidomer.length() <= 10)
+				spidomer = Vec2(0,0);
         }
-        if (spidomer.length() > hsddos[housingm].hsspeed)
-            spidomer = (polarVec(hsddos[housingm].hsspeed, mainhs.angle()));
+        
 		//------------------------------------влево
 		if (input.pressed(A)&& (dviglo !=2) && (mesh_vod != 2))
 		{
-
+			if (spidomer.length() > 0)
+			{
+				spidomer -= spidomer*timeDelta();
+			}
 
 			auto tvec = Vec2(10.0, 0.0);
 			mainhsangle += 3.14 * timeDelta();
@@ -369,6 +377,10 @@ class MyApp : public App
 		//-------------------------------------вправо
 		if (input.pressed(D) && (dviglo != 2) && (mesh_vod != 2))
 		{
+			if (spidomer.length() > 0)
+			{
+				spidomer -= spidomer*timeDelta();
+			}
 			auto tvec = Vec2(10.0, 0.0);
 			mainhsangle -= 3.14 * timeDelta();
 			mainhs.setAngle(mainhsangle);
