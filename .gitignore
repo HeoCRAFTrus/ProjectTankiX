@@ -1,7 +1,7 @@
 .vs
 Release/
 Debug/
-
+*.vcxproj
 # Prerequisites
 *.d
 
