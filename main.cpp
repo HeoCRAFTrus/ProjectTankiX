@@ -345,7 +345,23 @@ class MyApp : public App
 			if (spidomer.length() <= 10)
 				spidomer = Vec2(0,0);
         }
-        
+        duster.setPeriod(20/(spidomer.length()));
+        if (!spidomer.length() <= 0)
+        {
+            
+            if (duster.check())
+            {
+                auto ddust = dust.load("dust.json", mainhs.pos());
+                ddust.anim.run("zatux");
+                dust.data(ddust) = spidomer/2;
+                auto ttraki = traki.load("sled.json", mainhs.pos());
+                ttraki.anim.run("slzat");
+                ttraki.setAngle(spidomer.angle());
+            }
+        }
+        for (auto ddust : dust.all())
+            ddust.move(dust.data(ddust)*timeDelta());
+       
 		//------------------------------------влево
 		if (input.pressed(A)&& (dviglo !=2) && (mesh_vod != 2))
 		{
@@ -1536,6 +1552,8 @@ class MyApp : public App
 
 	////////////////////////////////
 	LayerFromDesign(void, housing);
+    LayerFromDesign(void, traki);
+    LayerFromDesign(Vec2, dust);
 	LayerFromDesign(void, shaders2);
 	LayerFromDesign(void, guns);
 	LayerFromDesign(void, towers);
@@ -1545,7 +1563,7 @@ class MyApp : public App
 	FromDesign(GameObj, wall1);
 	FromDesign(GameObj, wall2);
 	////////////////////////////////
-
+    Timer duster;
 	//////// наш танк
 	float mainhsangle;
 	float animhsangle;
@@ -1606,7 +1624,6 @@ class MyApp : public App
 	///////////////////////////////
 	FromDesign(GameView, gamepole);
 	LayerFromDesign(void, bhbp);
-
 	FromDesign(Button, newgame);
 	FromDesign(Button, loadgame);
 	FromDesign(Button, howtoplay);
