@@ -351,9 +351,10 @@ class MyApp : public App
             
             if (duster.check())
             {
+				
                 auto ddust = dust.load("dust.json", mainhs.pos());
                 ddust.anim.run("zatux");
-                dust.data(ddust) = spidomer/2;
+                dust.data(ddust) = spidomer/1.25;
                 auto ttraki = traki.load("sled.json", mainhs.pos());
                 ttraki.anim.run("slzat");
                 ttraki.setAngle(spidomer.angle());
