@@ -59,7 +59,7 @@ class MyApp : public App
 		//tvec.rotate(mainhs.angle());
 		//maint.setPos(tvec + mainhs.pos());
 		angar.setPos(angar.pos() + Vec2(300.0, 200.0));
-        kishki_angara.setPos(Vec2(300.0, 200.0));
+		kishki_angara.setPos(Vec2(300.0, 200.0));
 		wall1.setPos(angar.pos() + Vec2(0.0, 63.0));
 		wall2.setPos(angar.pos() + Vec2(0.0, -63.0));
 		tower = 0;
@@ -193,8 +193,9 @@ class MyApp : public App
 		dhs.sdvig = 23;
 		dhs.hp = 10000;
 		hsddos.push_back(dhs);
+
 		///////////////////////////////// "стартовый комплект игрока"
-		
+
 		maing = guns.load("g1.json");
 		maint = towers.load("t1.json");
 		mainhs = housing.load("hs1.json");
@@ -204,7 +205,7 @@ class MyApp : public App
 		animg = guns.load("g1.json");
 		animt = towers.load("t1.json");
 		animhs = housing.load("hs1.json");
-		mainbhbphspbhbp = bhbp.load("hpb.json");		
+		mainbhbphspbhbp = bhbp.load("hpb.json");
 		animbhbphspbhbp = bhbp.load("hpb.json");
 
 
@@ -216,13 +217,13 @@ class MyApp : public App
 		Agun = 0;
 		Ahousing = 0;
 		gusliy = 0;
-		dviglo=0;
-		bashnia=0;
-		triplex=0;
-		dulo=0;
-		bk=0;
-		radio=0;
-		
+		dviglo = 0;
+		bashnia = 0;
+		triplex = 0;
+		dulo = 0;
+		bk = 0;
+		radio = 0;
+
 
 		auto tvec = Vec2(10.0, 0.0);
 		tvec.rotate(animhs.angle());
@@ -246,6 +247,14 @@ class MyApp : public App
 		/////кнопки
 		connect(newgame, play);
 		connect(exit, close);
+		//////////////////////////////////////////////инициализация карты/////////////////////////////////////
+
+	for (int i = 0; ; i++)
+		{
+			graund.load("clay.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomInt(-180,180));
+			if (i > 500)
+				break;
+		}
 	}
 	////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -254,6 +263,7 @@ class MyApp : public App
 		//проверка переменной старта игры
 		if (game == 0)
 			return;
+
 		//////////////////////////////////////////////управление//////////////////////////////////////////////
 		using namespace InputKey;
         kishki_angara.hide();
@@ -1631,6 +1641,7 @@ class MyApp : public App
 	FromDesign(Button, exit);
 	FromDesign(FilledRect, blk);
 	FromDesign(Layout, stolb1);
+	LayerFromDesign(void, graund);
 
 	vector<gundata> gddos;
 	vector<tdata> tddos;
