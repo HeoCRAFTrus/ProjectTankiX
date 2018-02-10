@@ -24,6 +24,8 @@ Debug/
 *.mod
 *.smod
 
+*.vcxproj
+
 # Compiled Static libraries
 *.lai
 *.la

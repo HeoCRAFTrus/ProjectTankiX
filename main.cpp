@@ -51,211 +51,223 @@ class MyApp : public App
 	}
 
 	////////////////////////////////////////////// //////////////////////////////////////////////
-	void load()
-	{
-		mainhsangle = 0;
-		//mainhs.setAngle(mainhsangle);
-		//auto tvec = Vec2(10.0, 0.0);
-		//tvec.rotate(mainhs.angle());
-		//maint.setPos(tvec + mainhs.pos());
-		angar.setPos(angar.pos() + Vec2(300.0, 200.0));
-		kishki_angara.setPos(Vec2(300.0, 200.0));
-		wall1.setPos(angar.pos() + Vec2(0.0, 63.0));
-		wall2.setPos(angar.pos() + Vec2(0.0, -63.0));
-		tower = 0;
-		gun = 0;
-		housingm = 0;
-		Acom = 0;
-		Azar = 0;
-		Araddist = 0;
-		Amesh_vod = 0;
-		Anavod = 0;
-		//////////////////////////////// орудия
-		gundata d;
-		d.nameg = "g1.json";
-		d.sg = Vec2(118.0, 0.0);
-		d.gload = 6;
-		d.uron = 1000;
-		gddos.push_back(d);
+    void load()
+    {
+        mainhsangle = 0;
+        //mainhs.setAngle(mainhsangle);
+        //auto tvec = Vec2(10.0, 0.0);
+        //tvec.rotate(mainhs.angle());
+        //maint.setPos(tvec + mainhs.pos());
+        angar.setPos(angar.pos() + Vec2(300.0, 200.0));
+        kishki_angara.setPos(Vec2(300.0, 200.0));
+        wall1.setPos(angar.pos() + Vec2(0.0, 63.0));
+        wall2.setPos(angar.pos() + Vec2(0.0, -63.0));
+        tower = 0;
+        gun = 0;
+        housingm = 0;
+        Acom = 0;
+        Azar = 0;
+        Araddist = 0;
+        Amesh_vod = 0;
+        Anavod = 0;
+        //////////////////////////////// орудия
+        gundata d;
+        d.nameg = "g1.json";
+        d.sg = Vec2(118.0, 0.0);
+        d.gload = 6;
+        d.uron = 1000;
+        gddos.push_back(d);
 
-		d.nameg = "g2.json";
-		d.sg = Vec2(31.0, 0.0);
-		d.gload = 0.15;
-		d.uron = 100;
-		gddos.push_back(d);
+        d.nameg = "g2.json";
+        d.sg = Vec2(31.0, 0.0);
+        d.gload = 0.15;
+        d.uron = 100;
+        gddos.push_back(d);
 
-		d.nameg = "g3.json";
-		d.sg = Vec2(45.0, 0.0);
-		d.gload = 9.5;
-		d.uron = 20000;
-		gddos.push_back(d);
+        d.nameg = "g3.json";
+        d.sg = Vec2(45.0, 0.0);
+        d.gload = 9.5;
+        d.uron = 20000;
+        gddos.push_back(d);
 
-		d.nameg = "g4.json";
-		d.sg = Vec2(95.0, 0.0);
-		d.gload = 7;
-		d.uron = 4000;
-		gddos.push_back(d);
+        d.nameg = "g4.json";
+        d.sg = Vec2(95.0, 0.0);
+        d.gload = 7;
+        d.uron = 4000;
+        gddos.push_back(d);
 
-		d.nameg = "g5.json";
-		d.sg = Vec2(74.0, 0.0);
-		d.gload = 2;
-		d.uron = 8000;
-		gddos.push_back(d);
-		//////////////////////////////// башни
-		tdata dt;
-		dt.namet = "t1.json";
-		dt.st = Vec2(110.0, 0.0);
-		dt.sgt = Vec2(0.0, 0.0);
-		dt.tfov = 4.14;
-		tddos.push_back(dt);
+        d.nameg = "g5.json";
+        d.sg = Vec2(74.0, 0.0);
+        d.gload = 2;
+        d.uron = 8000;
+        gddos.push_back(d);
+        //////////////////////////////// башни
+        tdata dt;
+        dt.namet = "t1.json";
+        dt.st = Vec2(110.0, 0.0);
+        dt.sgt = Vec2(0.0, 0.0);
+        dt.tfov = 4.14;
+        tddos.push_back(dt);
 
-		dt.namet = "t2.json";
-		dt.st = Vec2(110.0, 0.0);
-		dt.sgt = Vec2(10.0, 0.0);
-		dt.tfov = 2.56;
-		tddos.push_back(dt);
+        dt.namet = "t2.json";
+        dt.st = Vec2(110.0, 0.0);
+        dt.sgt = Vec2(10.0, 0.0);
+        dt.tfov = 2.56;
+        tddos.push_back(dt);
 
-		dt.namet = "t3.json";
-		dt.st = Vec2(110.0, 0.0);
-		dt.sgt = Vec2(-1.0, 0.0);
-		dt.tfov = 1.14;
-		tddos.push_back(dt);
+        dt.namet = "t3.json";
+        dt.st = Vec2(110.0, 0.0);
+        dt.sgt = Vec2(-1.0, 0.0);
+        dt.tfov = 1.14;
+        tddos.push_back(dt);
 
-		dt.namet = "t4.json";
-		dt.st = Vec2(110.0, 0.0);
-		dt.sgt = Vec2(10.0, 0.0);
-		dt.tfov = 2.0;
-		tddos.push_back(dt);
+        dt.namet = "t4.json";
+        dt.st = Vec2(110.0, 0.0);
+        dt.sgt = Vec2(10.0, 0.0);
+        dt.tfov = 2.0;
+        tddos.push_back(dt);
 
-		dt.namet = "t5.json";
-		dt.st = Vec2(110.0, 0.0);
-		dt.sgt = Vec2(0.0, 0.0);
-		dt.tfov = 4.14;
-		tddos.push_back(dt);
-		//////////////////////////////// корпуса
-		hsdata dhs;
-		dhs.namehs = "hs1.json";
-		dhs.shs = Vec2(0.0, 0.0);
-		dhs.hsfov = 3.14;
-		dhs.hsspeed = 300;
-		dhs.uskr = 200;
-		dhs.diameter = 35;
-		dhs.sdvig = 17;
-		dhs.hp = 5000;
-		hsddos.push_back(dhs);
+        dt.namet = "t5.json";
+        dt.st = Vec2(110.0, 0.0);
+        dt.sgt = Vec2(0.0, 0.0);
+        dt.tfov = 4.14;
+        tddos.push_back(dt);
+        //////////////////////////////// корпуса
+        hsdata dhs;
+        dhs.namehs = "hs1.json";
+        dhs.shs = Vec2(0.0, 0.0);
+        dhs.hsfov = 3.14;
+        dhs.hsspeed = 300;
+        dhs.uskr = 200;
+        dhs.diameter = 35;
+        dhs.sdvig = 17;
+        dhs.hp = 5000;
+        hsddos.push_back(dhs);
 
-		dhs.namehs = "hs2.json";
-		dhs.shs = Vec2(0.0, 0.0);
-		dhs.hsfov = 3.14;
-		dhs.hsspeed = 200;
-		dhs.uskr = 200;
-		dhs.diameter = 35;
-		dhs.sdvig = 17;
-		dhs.hp = 5500;
-		hsddos.push_back(dhs);
+        dhs.namehs = "hs2.json";
+        dhs.shs = Vec2(0.0, 0.0);
+        dhs.hsfov = 3.14;
+        dhs.hsspeed = 200;
+        dhs.uskr = 200;
+        dhs.diameter = 35;
+        dhs.sdvig = 17;
+        dhs.hp = 5500;
+        hsddos.push_back(dhs);
 
-		dhs.namehs = "hs2v2.json";
-		dhs.shs = Vec2(0.0, 0.0);
-		dhs.hsfov = 3.14;
-		dhs.hsspeed = 200;
-		dhs.uskr = 200;
-		dhs.diameter = 35;
-		dhs.sdvig = 17;
-		dhs.hp = 4000;
-		hsddos.push_back(dhs);
+        dhs.namehs = "hs2v2.json";
+        dhs.shs = Vec2(0.0, 0.0);
+        dhs.hsfov = 3.14;
+        dhs.hsspeed = 200;
+        dhs.uskr = 200;
+        dhs.diameter = 35;
+        dhs.sdvig = 17;
+        dhs.hp = 4000;
+        hsddos.push_back(dhs);
 
-		dhs.namehs = "hs3.json";
-		dhs.shs = Vec2(0.0, 0.0);
-		dhs.hsfov = 3.14;
-		dhs.hsspeed = 400;
-		dhs.uskr = 200;
-		dhs.diameter = 35;
-		dhs.sdvig = 17;
-		dhs.hp = 4500;
-		hsddos.push_back(dhs);
+        dhs.namehs = "hs3.json";
+        dhs.shs = Vec2(0.0, 0.0);
+        dhs.hsfov = 3.14;
+        dhs.hsspeed = 400;
+        dhs.uskr = 200;
+        dhs.diameter = 35;
+        dhs.sdvig = 17;
+        dhs.hp = 4500;
+        hsddos.push_back(dhs);
 
-		dhs.namehs = "hs3v2.json";
-		dhs.shs = Vec2(0.0, 0.0);
-		dhs.hsfov = 3.14;
-		dhs.hsspeed = 100;
-		dhs.uskr = 200;
-		dhs.diameter = 35;
-		dhs.sdvig = 17;
-		dhs.hp = 7000;
-		hsddos.push_back(dhs);
+        dhs.namehs = "hs3v2.json";
+        dhs.shs = Vec2(0.0, 0.0);
+        dhs.hsfov = 3.14;
+        dhs.hsspeed = 100;
+        dhs.uskr = 200;
+        dhs.diameter = 35;
+        dhs.sdvig = 17;
+        dhs.hp = 7000;
+        hsddos.push_back(dhs);
 
-		dhs.namehs = "hs4.json";
-		dhs.shs = Vec2(0.0, 0.0);
-		dhs.hsfov = 3.14;
-		dhs.hsspeed = 100;
-		dhs.uskr = 200;
-		dhs.diameter = 61;
-		dhs.sdvig = 23;
-		dhs.hp = 10000;
-		hsddos.push_back(dhs);
+        dhs.namehs = "hs4.json";
+        dhs.shs = Vec2(0.0, 0.0);
+        dhs.hsfov = 3.14;
+        dhs.hsspeed = 100;
+        dhs.uskr = 200;
+        dhs.diameter = 61;
+        dhs.sdvig = 23;
+        dhs.hp = 10000;
+        hsddos.push_back(dhs);
 
-		///////////////////////////////// "стартовый комплект игрока"
+        ///////////////////////////////// "стартовый комплект игрока"
 
-		maing = guns.load("g1.json");
-		maint = towers.load("t1.json");
-		mainhs = housing.load("hs1.json");
+        maing = guns.load("g1.json");
+        maint = towers.load("t1.json");
+        mainhs = housing.load("hs1.json");
 
-		//////////////////////////////// "стартовый комплект противника"
+        //////////////////////////////// "стартовый комплект противника"
 
-		animg = guns.load("g1.json");
-		animt = towers.load("t1.json");
-		animhs = housing.load("hs1.json");
-		mainbhbphspbhbp = bhbp.load("hpb.json");
-		animbhbphspbhbp = bhbp.load("hpb.json");
-
-
-		mainhp = hsddos[housingm].hp;
-		myhp = hsddos[animhs].hp;
-
-		animhsangle = 0;
-		Atower = 0;
-		Agun = 0;
-		Ahousing = 0;
-		gusliy = 0;
-		dviglo = 0;
-		bashnia = 0;
-		triplex = 0;
-		dulo = 0;
-		bk = 0;
-		radio = 0;
+        animg = guns.load("g1.json");
+        animt = towers.load("t1.json");
+        animhs = housing.load("hs1.json");
+        mainbhbphspbhbp = bhbp.load("hpb.json");
+        animbhbphspbhbp = bhbp.load("hpb.json");
 
 
-		auto tvec = Vec2(10.0, 0.0);
-		tvec.rotate(animhs.angle());
-		maint.setPos(tvec + mainhs.pos());
+        mainhp = hsddos[housingm].hp;
+        myhp = hsddos[animhs].hp;
 
-		auto atvec = Vec2(10.0, 0.0);
-		//atvec.rotate(animhs.angle());
-		animt.setPos(atvec + animhs.pos());
-
-		auto gvec = gddos[gun].sg;
-		gvec.rotate(animt.angle());
-		maing.setPos(gvec + maint.pos());
-
-		auto agvec = gddos[gun].sg;
-		agvec.rotate(animt.angle());
-		animg.setPos(agvec + animt.pos());
-
-		rload.setScaleX(0);
+        animhsangle = 0;
+        Atower = 0;
+        Agun = 0;
+        Ahousing = 0;
+        gusliy = 0;
+        dviglo = 0;
+        bashnia = 0;
+        triplex = 0;
+        dulo = 0;
+        bk = 0;
+        radio = 0;
 
 
-		/////кнопки
-		connect(newgame, play);
-		connect(exit, close);
-		//////////////////////////////////////////////инициализация карты/////////////////////////////////////
+        auto tvec = Vec2(10.0, 0.0);
+        tvec.rotate(animhs.angle());
+        maint.setPos(tvec + mainhs.pos());
 
-	for (int i = 0; ; i++)
-		{
-			graund.load("clay.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomInt(-180,180));
-			if (i > 100)
-				break;
-		}
-	}
+        auto atvec = Vec2(10.0, 0.0);
+        //atvec.rotate(animhs.angle());
+        animt.setPos(atvec + animhs.pos());
+
+        auto gvec = gddos[gun].sg;
+        gvec.rotate(animt.angle());
+        maing.setPos(gvec + maint.pos());
+
+        auto agvec = gddos[gun].sg;
+        agvec.rotate(animt.angle());
+        animg.setPos(agvec + animt.pos());
+
+        rload.setScaleX(0);
+
+
+        /////кнопки
+        connect(newgame, play);
+        connect(exit, close);
+
+        //////////////////////////////////////////////инициализация карты/////////////////////////////////////
+
+        for (int i = 0; i < 100; i++)
+        {
+            clay.load("clay.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomFloat()*6.28);
+        }
+        for (int i = 0; i < 1000; i++)
+        {
+            shaders1.load("bush1.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomFloat()*6.28);
+        }
+        for (auto bush1 : shaders1.all())
+        {
+            if (!clay.find(bush1.box()).empty())
+            {
+                shaders1.remove(bush1);
+            }
+
+        }
+    }
+
 	////////////////////////////////////////////////////////////////////////////////////////////
 
 	void process(Input input)
@@ -304,9 +316,11 @@ class MyApp : public App
 			{
                 kishki_angara.show();
                 angar.hide();
-				mainhs.setPos(mainhs.pos() - spvec * timeDelta());
-				maint.setPos(maint.pos() - spvec * timeDelta());
-				maing.setPos(maing.pos() - spvec * timeDelta());
+             
+				mainhs.setPos(mainhs.pos() - spidomer * timeDelta());
+				maint.setPos(maint.pos() - spidomer * timeDelta());
+				maing.setPos(maing.pos() - spidomer * timeDelta());
+                spidomer = Vec2(0, 0);
 			}
             else
             {
@@ -1563,6 +1577,7 @@ class MyApp : public App
 
 	////////////////////////////////
 	LayerFromDesign(void, housing);
+    LayerFromDesign(void, shaders1);
     LayerFromDesign(void, traki);
     LayerFromDesign(Vec2, dust);
 	LayerFromDesign(void, shaders2);
@@ -1642,6 +1657,7 @@ class MyApp : public App
 	FromDesign(FilledRect, blk);
 	FromDesign(Layout, stolb1);
 	LayerFromDesign(void, graund);
+    LayerFromDesign(void, clay);
 
 	vector<gundata> gddos;
 	vector<tdata> tddos;

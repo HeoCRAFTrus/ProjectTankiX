@@ -3,7 +3,7 @@
     "fontsPath": "../gamebase/resources/fonts",
     "height": 1080,
     "imagesPath": "images",
-    "mode": "fullscreen",
+    "mode": "window",
     "shadersPath": "../gamebase/resources/shaders",
     "width": 1920
 }
