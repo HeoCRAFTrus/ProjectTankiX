@@ -252,7 +252,7 @@ class MyApp : public App
 	for (int i = 0; ; i++)
 		{
 			graund.load("clay.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomInt(-180,180));
-			if (i > 500)
+			if (i > 100)
 				break;
 		}
 	}
