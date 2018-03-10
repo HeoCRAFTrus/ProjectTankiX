@@ -213,8 +213,15 @@
             },
             {
                "_name" : "shaders2",
-               "_typeName" : "SimpleLayer",
-               "objects" : []
+               "_typeName" : "Layer",
+               "index" : {
+                  "_typeName" : "FlatIndex",
+                  "keyType" : 2
+               },
+               "list" : [],
+               "order" : {
+                  "_typeName" : "SortByIDOrder"
+               }
             },
             {
                "_name" : "turets",

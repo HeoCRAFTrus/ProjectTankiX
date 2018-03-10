@@ -1,42 +1,16 @@
 #include <gamebase/Gamebase.h>
-/*#include<Crew.h>
-#include<Tanks.h>
-#include<Maths.h>*/
-//
 using namespace gamebase;
 using namespace std;
+#include "heads\CrewAndModules.h"
+#include"heads\Tanks.h"
+#include"heads\Maths.h"
+#include"heads\Level.h"
+//
 
 int stepn = 100;
 int game = 0;
 
-struct gundata
-{
-	string nameg;
-	Vec2 sg;
-	float gload;
-	float pload;
-	int uron;
-};
 
-struct tdata
-{
-	string namet;
-	Vec2 st;
-	Vec2 sgt;
-	float tfov;
-};
-struct hsdata
-{
-	string namehs;
-	Vec2 shs;
-	Vec2 sths;
-	float hsfov;
-	float hsspeed;
-	float diameter;
-	float sdvig;
-	int hp;
-	float uskr;
-};
 class MyApp : public App
 {
 	void play()
@@ -57,7 +31,6 @@ class MyApp : public App
     void load()
     {
         mainhsangle = 0;
-        //mainhs.setAngle(mainhsangle);
         //auto tvec = Vec2(10.0, 0.0);
         //tvec.rotate(mainhs.angle());
         //maint.setPos(tvec + mainhs.pos());
@@ -73,135 +46,16 @@ class MyApp : public App
         Araddist = 0;
         Amesh_vod = 0;
         Anavod = 0;
-        //////////////////////////////// орудия
-        gundata d;
-        d.nameg = "g1.json";
-        d.sg = Vec2(118.0, 0.0);
-        d.gload = 6;
-        d.uron = 1000;
-        gddos.push_back(d);
 
-        d.nameg = "g2.json";
-        d.sg = Vec2(31.0, 0.0);
-        d.gload = 0.15;
-        d.uron = 100;
-        gddos.push_back(d);
-
-        d.nameg = "g3.json";
-        d.sg = Vec2(45.0, 0.0);
-        d.gload = 9.5;
-        d.uron = 20000;
-        gddos.push_back(d);
-
-        d.nameg = "g4.json";
-        d.sg = Vec2(95.0, 0.0);
-        d.gload = 7;
-        d.uron = 4000;
-        gddos.push_back(d);
-
-        d.nameg = "g5.json";
-        d.sg = Vec2(74.0, 0.0);
-        d.gload = 2;
-        d.uron = 8000;
-        gddos.push_back(d);
-        //////////////////////////////// башни
-        tdata dt;
-        dt.namet = "t1.json";
-        dt.st = Vec2(110.0, 0.0);
-        dt.sgt = Vec2(0.0, 0.0);
-        dt.tfov = 4.14;
-        tddos.push_back(dt);
-
-        dt.namet = "t2.json";
-        dt.st = Vec2(110.0, 0.0);
-        dt.sgt = Vec2(10.0, 0.0);
-        dt.tfov = 2.56;
-        tddos.push_back(dt);
-
-        dt.namet = "t3.json";
-        dt.st = Vec2(110.0, 0.0);
-        dt.sgt = Vec2(-1.0, 0.0);
-        dt.tfov = 1.14;
-        tddos.push_back(dt);
-
-        dt.namet = "t4.json";
-        dt.st = Vec2(110.0, 0.0);
-        dt.sgt = Vec2(10.0, 0.0);
-        dt.tfov = 2.0;
-        tddos.push_back(dt);
-
-        dt.namet = "t5.json";
-        dt.st = Vec2(110.0, 0.0);
-        dt.sgt = Vec2(0.0, 0.0);
-        dt.tfov = 4.14;
-        tddos.push_back(dt);
-        //////////////////////////////// корпуса
-        hsdata dhs;
-        dhs.namehs = "hs1.json";
-        dhs.shs = Vec2(0.0, 0.0);
-        dhs.hsfov = 3.14;
-        dhs.hsspeed = 300;
-        dhs.uskr = 200;
-        dhs.diameter = 35;
-        dhs.sdvig = 17;
-        dhs.hp = 5000;
-        hsddos.push_back(dhs);
-
-        dhs.namehs = "hs2.json";
-        dhs.shs = Vec2(0.0, 0.0);
-        dhs.hsfov = 3.14;
-        dhs.hsspeed = 200;
-        dhs.uskr = 200;
-        dhs.diameter = 35;
-        dhs.sdvig = 17;
-        dhs.hp = 5500;
-        hsddos.push_back(dhs);
-
-        dhs.namehs = "hs2v2.json";
-        dhs.shs = Vec2(0.0, 0.0);
-        dhs.hsfov = 3.14;
-        dhs.hsspeed = 200;
-        dhs.uskr = 200;
-        dhs.diameter = 35;
-        dhs.sdvig = 17;
-        dhs.hp = 4000;
-        hsddos.push_back(dhs);
-
-        dhs.namehs = "hs3.json";
-        dhs.shs = Vec2(0.0, 0.0);
-        dhs.hsfov = 3.14;
-        dhs.hsspeed = 400;
-        dhs.uskr = 200;
-        dhs.diameter = 35;
-        dhs.sdvig = 17;
-        dhs.hp = 4500;
-        hsddos.push_back(dhs);
-
-        dhs.namehs = "hs3v2.json";
-        dhs.shs = Vec2(0.0, 0.0);
-        dhs.hsfov = 3.14;
-        dhs.hsspeed = 100;
-        dhs.uskr = 200;
-        dhs.diameter = 35;
-        dhs.sdvig = 17;
-        dhs.hp = 7000;
-        hsddos.push_back(dhs);
-
-        dhs.namehs = "hs4.json";
-        dhs.shs = Vec2(0.0, 0.0);
-        dhs.hsfov = 3.14;
-        dhs.hsspeed = 100;
-        dhs.uskr = 200;
-        dhs.diameter = 61;
-        dhs.sdvig = 23;
-        dhs.hp = 10000;
-        hsddos.push_back(dhs);
+        tankData(gddos,tddos,hsddos);
 
         ///////////////////////////////// "стартовый комплект игрока"
 
         maing = guns.load("g1.json");
         maint = towers.load("t1.json");
         mainhs = housing.load("hs1.json");
+        mainhs.setAngle(mainhsangle);
+        mainhs.setPos(500, 0);
 
         //////////////////////////////// "стартовый комплект противника"
 
@@ -252,23 +106,8 @@ class MyApp : public App
         connect(exit, close);
 
         //////////////////////////////////////////////инициализация карты/////////////////////////////////////
-
-        for (int i = 0; i < 100; i++)
-        {
-            clay.load("clay.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomFloat()*6.28);
-        }
-        for (int i = 0; i < 1000; i++)
-        {
-            shaders1.load("bush1.json", randomInt(-10000, 10000), randomInt(-10000, 10000)).setAngle(randomFloat()*6.28);
-        }
-        for (auto bush1 : shaders1.all())
-        {
-            if (!clay.find(bush1.box()).empty())
-            {
-                shaders1.remove(bush1);
-            }
-
-        }
+        levelGen(clay, shaders1);
+    
     }
 
 	////////////////////////////////////////////////////////////////////////////////////////////
@@ -638,232 +477,7 @@ class MyApp : public App
 			myhp = hsddos[housingm].hp;
 		}
 		//cout << animt.angle() << " -> " << angvec.angle() << endl;
-		//////////////////////////////////////////////наш экипаж//////////////////////////////////////////////
-		if (com != 0)
-		{
-			if (com == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("com").show();
-				mainbhbphspbhbp.child<Texture>("com2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("com").hide();
-				mainbhbphspbhbp.child<Texture>("com2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("com").hide();
-			mainbhbphspbhbp.child<Texture>("com2").hide();
-		}
-		//--------------------------------радист
-		if (raddist != 0)
-		{
-			if (raddist == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("radd").show();
-				mainbhbphspbhbp.child<Texture>("radd2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("radd").hide();
-				mainbhbphspbhbp.child<Texture>("radd2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("radd").hide();
-			mainbhbphspbhbp.child<Texture>("radd2").hide();
-		}
-		//--------------------------------заряжающий
-		if (zar != 0)
-		{
-			if (zar == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("rldr").show();
-				mainbhbphspbhbp.child<Texture>("rldr2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("rldr").hide();
-				mainbhbphspbhbp.child<Texture>("rldr2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("rldr").hide();
-			mainbhbphspbhbp.child<Texture>("rldr2").hide();
-		}
-		//--------------------------------мех-вод
-		if (mesh_vod != 0)
-		{
-			if (mesh_vod == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("drv").show();
-				mainbhbphspbhbp.child<Texture>("drv2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("drv").hide();
-				mainbhbphspbhbp.child<Texture>("drv2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("drv").hide();
-			mainbhbphspbhbp.child<Texture>("drv2").hide();
-		}
-
-		//--------------------------------наводчик
-		if (navod != 0)
-		{
-			if (navod == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("gner").show();
-				mainbhbphspbhbp.child<Texture>("gner2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("gner").hide();
-				mainbhbphspbhbp.child<Texture>("gner2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("gner").hide();
-			mainbhbphspbhbp.child<Texture>("gner2").hide();
-		}
-
-		mainbhbphspbhbp.child<Layout>("Row2").update();
-		
-		//////////////////////////////////////////////наши модули//////////////////////////////////////////////
-		//--------------------------------двигатель
-		if (dviglo != 0)
-		{
-			if (dviglo == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("dvig").show();
-				mainbhbphspbhbp.child<Texture>("dvig2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("dvig").hide();
-				mainbhbphspbhbp.child<Texture>("dvig2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("dvig").hide();
-			mainbhbphspbhbp.child<Texture>("dvig2").hide();
-		}
-		//--------------------------------радио
-		if (radio != 0)
-		{
-			if (radio == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("rad").show();
-				mainbhbphspbhbp.child<Texture>("rad2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("rad").hide();
-				mainbhbphspbhbp.child<Texture>("rad2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("rad").hide();
-			mainbhbphspbhbp.child<Texture>("rad2").hide();
-		}
-		//--------------------------------триплекс
-		if (triplex != 0)
-		{
-			if (triplex == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("trip").show();
-				mainbhbphspbhbp.child<Texture>("trip2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("trip").hide();
-				mainbhbphspbhbp.child<Texture>("trip2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("trip").hide();
-			mainbhbphspbhbp.child<Texture>("trip2").hide();
-		}
-		//--------------------------------гусеница
-		if (gusliy != 0)
-		{
-			if (gusliy == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("gus").show();
-				mainbhbphspbhbp.child<Texture>("gus2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("gus").hide();
-				mainbhbphspbhbp.child<Texture>("gus2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("gus").hide();
-			mainbhbphspbhbp.child<Texture>("gus2").hide();
-		}
-		//--------------------------------боеукладка
-		if (bk == 1)
-		{
-			mainbhbphspbhbp.child<Texture>("bk").show();
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("bk").hide();
-		}
-		//--------------------------------башня
-		if (bashnia != 0)
-		{
-			if (bashnia == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("bus").show();
-				mainbhbphspbhbp.child<Texture>("bus2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("bus").hide();
-				mainbhbphspbhbp.child<Texture>("bus2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("bus").hide();
-			mainbhbphspbhbp.child<Texture>("bus2").hide();
-		}
-		//--------------------------------дуло
-		if (dulo != 0)
-		{
-			if (dulo == 1)
-			{
-				mainbhbphspbhbp.child<Texture>("ggun").show();
-				mainbhbphspbhbp.child<Texture>("ggun2").hide();
-			}
-			else
-			{
-				mainbhbphspbhbp.child<Texture>("ggun").hide();
-				mainbhbphspbhbp.child<Texture>("ggun2").show();
-			}
-		}
-		else
-		{
-			mainbhbphspbhbp.child<Texture>("ggun").hide();
-			mainbhbphspbhbp.child<Texture>("ggun2").hide();
-		}
-		//-----------------------------------------
-
-		mainbhbphspbhbp.child<Layout>("Row").update();
+        OurCrewModules(bk, com, raddist, zar, mesh_vod, navod, dviglo, radio ,triplex, gusliy, bashnia, dulo , mainbhbphspbhbp);
 
 		//////////////////////////////////////////////наш экипаж//////////////////////////////////////////////
 		//--------------------------------водила
@@ -1042,230 +656,10 @@ class MyApp : public App
 		animbhbphspbhbp.setPos(animhs.pos().x, animhs.pos().y + 50);
 		animbhbphspbhbp.child<GameObj>("hpb").setScaleX(ratio);
 		gamepole.setView(mainhs.pos());
-		//////////////////////////////////////////////вражеские модули//////////////////////////////////////////////
-		if (Adviglo != 0)
-		{
-			if (Adviglo == 1)
-			{
-				animbhbphspbhbp.child<Texture>("dvig").show();
-				animbhbphspbhbp.child<Texture>("dvig2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("dvig").hide();
-				animbhbphspbhbp.child<Texture>("dvig2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("dvig").hide();
-			animbhbphspbhbp.child<Texture>("dvig2").hide();
-		}
-		//--------------------------------радио
-		if (Aradio != 0)
-		{
-			if (Aradio == 1)
-			{
-				animbhbphspbhbp.child<Texture>("rad").show();
-				animbhbphspbhbp.child<Texture>("rad2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("rad").hide();
-				animbhbphspbhbp.child<Texture>("rad2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("rad").hide();
-			animbhbphspbhbp.child<Texture>("rad2").hide();
-		}
-		//--------------------------------триплекс
-		if (Atriplex != 0)
-		{
-			if (Atriplex == 1)
-			{
-				animbhbphspbhbp.child<Texture>("trip").show();
-				animbhbphspbhbp.child<Texture>("trip2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("trip").hide();
-				animbhbphspbhbp.child<Texture>("trip2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("trip").hide();
-			animbhbphspbhbp.child<Texture>("trip2").hide();
-		}
-		//--------------------------------гусеница
-		if (Agusliy != 0)
-		{
-			if (Agusliy == 1)
-			{
-				animbhbphspbhbp.child<Texture>("gus").show();
-				animbhbphspbhbp.child<Texture>("gus2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("gus").hide();
-				animbhbphspbhbp.child<Texture>("gus2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("gus").hide();
-			animbhbphspbhbp.child<Texture>("gus2").hide();
-		}
-		//--------------------------------боеукладка
-		if (Abk == 1)
-		{
-			animbhbphspbhbp.child<Texture>("bk").show();
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("bk").hide();
-		}
-		//--------------------------------башня
-		if (Abashnia != 0)
-		{
-			if (Abashnia == 1)
-			{
-				animbhbphspbhbp.child<Texture>("bus").show();
-				animbhbphspbhbp.child<Texture>("bus2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("bus").hide();
-				animbhbphspbhbp.child<Texture>("bus2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("bus").hide();
-			animbhbphspbhbp.child<Texture>("bus2").hide();
-		}
-		//--------------------------------дуло
-		if (Adulo != 0)
-		{
-			if (Adulo == 1)
-			{
-				animbhbphspbhbp.child<Texture>("ggun").show();
-				animbhbphspbhbp.child<Texture>("ggun2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("ggun").hide();
-				animbhbphspbhbp.child<Texture>("ggun2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("ggun").hide();
-			animbhbphspbhbp.child<Texture>("ggun2").hide();
-		}
+
+        TheirCrewModules(Abk, Acom, Araddist, Azar, Amesh_vod, Anavod, Adviglo, Aradio, Atriplex, Agusliy, Abashnia, Adulo, animbhbphspbhbp);
 		
-
-		animbhbphspbhbp.child<Layout>("Row").update();
-		//////////////////////////////////////////////вражиский экипаж//////////////////////////////////////////////
-		if (Acom != 0)
-		{
-			if (Acom == 1)
-			{
-				animbhbphspbhbp.child<Texture>("com").show();
-				animbhbphspbhbp.child<Texture>("com2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("com").hide();
-				animbhbphspbhbp.child<Texture>("com2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("com").hide();
-			animbhbphspbhbp.child<Texture>("com2").hide();
-		}
-		//--------------------------------радист
-		if (Araddist != 0)
-		{
-			if (Araddist == 1)
-			{
-				animbhbphspbhbp.child<Texture>("radd").show();
-				animbhbphspbhbp.child<Texture>("radd2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("radd").hide();
-				animbhbphspbhbp.child<Texture>("radd2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("radd").hide();
-			animbhbphspbhbp.child<Texture>("radd2").hide();
-		}
-		//--------------------------------заряжающий
-		if (Azar != 0)
-		{
-			if (Azar == 1)
-			{
-				animbhbphspbhbp.child<Texture>("rldr").show();
-				animbhbphspbhbp.child<Texture>("rldr2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("rldr").hide();
-				animbhbphspbhbp.child<Texture>("rldr2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("rldr").hide();
-			animbhbphspbhbp.child<Texture>("rldr2").hide();
-		}
-		//--------------------------------мех-вод
-		if (Amesh_vod != 0)
-		{
-			if (Amesh_vod == 1)
-			{
-				animbhbphspbhbp.child<Texture>("drv").show();
-				animbhbphspbhbp.child<Texture>("drv2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("drv").hide();
-				animbhbphspbhbp.child<Texture>("drv2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("drv").hide();
-			animbhbphspbhbp.child<Texture>("drv2").hide();
-		}
-
-		//--------------------------------наводчик
-		if (Anavod != 0)
-		{
-			if (Anavod == 1)
-			{
-				animbhbphspbhbp.child<Texture>("gner").show();
-				animbhbphspbhbp.child<Texture>("gner2").hide();
-			}
-			else
-			{
-				animbhbphspbhbp.child<Texture>("gner").hide();
-				animbhbphspbhbp.child<Texture>("gner2").show();
-			}
-		}
-		else
-		{
-			animbhbphspbhbp.child<Texture>("gner").hide();
-			animbhbphspbhbp.child<Texture>("gner2").hide();
-		}
-
-		animbhbphspbhbp.child<Layout>("Row2").update();
+        animbhbphspbhbp.child<Layout>("Row2").update();
 		////////////////////////////////////////////////////////////////////////////////////////////
 	}
 	
@@ -1275,33 +669,16 @@ class MyApp : public App
 	{
 		for (auto shell : shaders2.all())
 		{
-			auto vecsh = Vec2(2000.0, 0.0);
+			auto vecsh = Vec2(200.0, 0.0);
 			vecsh.rotate(shell.angle());
             shaders2.data(shell) = shell.pos();
 			shell.setPos(shell.pos() + vecsh / stepn * timeDelta());
-            //////////////////////////////////////проверка на рикошет, непробитие и попадание в гусеницу///////////
-            float x1 = 0, x2 = 0, y1 = 0, y2 = 0;
-            x2 = shaders2.data(shell).x;
-            y2 = shaders2.data(shell).y;
-            x1 = shell.pos().x;
-            y1 = shell.pos().y;
-            k1 =(y2-y1)/(x2-x1);
-            b1=y1-(k1*x1);
-            Vec2 p3(32, 16);
-            p3.rotate(mainhs.angle());
-            p3+= mainhs.pos();
-            x3 =p3.x;
-            y3 = p3.y;
-            Vec2 p4(-32, 16);
-            p4.rotate(mainhs.angle());
-            p4 += mainhs.pos();
-            x4 = p4.x;
-            y4 = p4.y;
-            k2 = (y4 - y3) / (x4 - x3);
-            b2 = y3 - (k2*x3);
-            float x5 = 0, y5 = 0;
-            x5 = (b1-b2)/(k2-k1);
-            y5 = k1+b1;
+
+            if (VecIntersection(shaders2, mainhs, shell))
+            {
+                gusliy++;
+            }
+
 			if (!shell.box().intersects(gamepole.gameBox()))
 			{
 				shaders2.remove(shell);
@@ -1403,7 +780,7 @@ class MyApp : public App
 					}
 				}
 			}
-			if (dist(shell.pos(), mainhs.pos()) <= hsddos[housing].diameter / 2)
+			if (dist(shell.pos(), mainhs.pos()) <= hsddos[housingm].diameter / 2)
 			{
 				int aa = 0;
 				shaders2.remove(shell);
@@ -1423,7 +800,7 @@ class MyApp : public App
 			{
 				auto sdvigvec = Vec2(hsddos[Ahousing].sdvig, 0.0);
 				sdvigvec.rotate(animhsangle);
-				if (dist(shell.pos(), mainhs.pos() + sdvigvec) <= hsddos[housing].diameter / 2)
+				if (dist(shell.pos(), mainhs.pos() + sdvigvec) <= hsddos[housingm].diameter / 2)
 				{
 					
 					shaders2.remove(shell);
@@ -1475,7 +852,7 @@ class MyApp : public App
 				}
 				else
 				{
-					if (dist(shell.pos(), mainhs.pos() - sdvigvec) <= hsddos[housing].diameter / 2)
+					if (dist(shell.pos(), mainhs.pos() - sdvigvec) <= hsddos[housingm].diameter / 2)
 					{
 						
 						shaders2.remove(shell);
@@ -1596,6 +973,7 @@ class MyApp : public App
 		for(int i=0;i<stepn;i++)
 		moveShells();
 		moveAnim();
+
 	}
 
 	/*float ag1;
@@ -1686,8 +1064,6 @@ class MyApp : public App
 	LayerFromDesign(void, graund);
     LayerFromDesign(void, clay);
 
-    float k1=0, k2=0, b1=0, b2=0;
-    float x3=0,x4=0,y3=0,y4=0;
 
 	vector<gundata> gddos;
 	vector<tdata> tddos;
