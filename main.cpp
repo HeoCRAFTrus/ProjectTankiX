@@ -30,6 +30,8 @@ class MyApp : public App
 	////////////////////////////////////////////// //////////////////////////////////////////////
     void load()
     {
+		randomize();
+
         mainhsangle = 0;
         //auto tvec = Vec2(10.0, 0.0);
         //tvec.rotate(mainhs.angle());
@@ -48,7 +50,7 @@ class MyApp : public App
         Anavod = 0;
 
         tankData(gddos,tddos,hsddos);
-
+		kpk.hide();
         ///////////////////////////////// "стартовый комплект игрока"
 
         maing = guns.load("g1.json");
@@ -320,12 +322,25 @@ class MyApp : public App
 			shellCreate.setPos(maing.pos());
 			//rload.setSizes(gddos[gun].gload/1000*timeDelta(), 20);
 		}
+		//-----------------------------------КПК
 
+		if (input.justPressed(M))
+		{
+			if (kpk.isVisible())
+			{
+				kpk.hide();
+			}
+			else
+			{
+				kpk.show();
+			}
+		}
 		//-----------------------------------пауза
 		if (input.pressed(Escape))
 		{
 			stopgame();
 		}
+		
 		//перезарядка
 		rtm = shellTimer.time() / gddos[gun].gload;
 		if (rtm >= 1)
@@ -1063,7 +1078,8 @@ class MyApp : public App
 	FromDesign(Layout, stolb1);
 	LayerFromDesign(void, graund);
     LayerFromDesign(void, clay);
-
+	FromDesign(Layout, kpk);
+	
 
 	vector<gundata> gddos;
 	vector<tdata> tddos;
