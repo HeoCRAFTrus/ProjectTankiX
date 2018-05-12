@@ -29,7 +29,7 @@
          "width" : 100
       },
       "color" : [ 1, 1, 1, 1 ],
-      "imageName" : "..\\..\\ProjectTankiX\\images\\destroed\\корпус_4.png",
+      "imageName" : "..\\..\\ProjectTankiX\\images\\destroyed\\корпус_4.png",
       "position" : {
          "_typeName" : "AligningOffset",
          "horAlign" : 1,

@@ -29,7 +29,7 @@
          "width" : 49
       },
       "color" : [ 1, 1, 1, 1 ],
-      "imageName" : "destroed\\t2v2.png",
+      "imageName" : "destroyed\\t2v2.png",
       "position" : {
          "_typeName" : "AligningOffset",
          "horAlign" : 1,

@@ -28,22 +28,22 @@ bool VecIntersection(Layer<Vec2> shaders2, GameObj mainhs, GameObj shell)
     y5 = k1*x5 + b1;
     if (x2 < x5 && x5 < x1)
 
-        cout << "x1: " << x1 << "y1: " << y1
+      /*  cout << "x1: " << x1 << "y1: " << y1
         << "x2: " << x2 << "y2: " << y2
         << "x3: " << x3 << "y3: " << y3
         << "x4: " << x4 << "y4: " << y4
-        << "x5: " << x5 << "y5: " << y5 << endl;
+        << "x5: " << x5 << "y5: " << y5 << endl;*/
     if (((x1 < x5) && (x2 < x5)) || ((x1 > x5) && (x2 > x5))|| ((x3 < x5) && (x4 < x5)) || ((x3 > x5) && (x4 > x5)))
     {
         return (false);
     }
     else
     {
-        cout << "x1: " << x1 << "y1: " << y1
+       /* cout << "x1: " << x1 << "y1: " << y1
             << "x2: " << x2 << "y2: " << y2
             << "x3: " << x3 << "y3: " << y3
             << "x4: " << x4 << "y4: " << y4
-            << "x5: " << x5 << "y5: " << y5 << endl;
+            << "x5: " << x5 << "y5: " << y5 << endl;*/
         return (true);
     }
 }

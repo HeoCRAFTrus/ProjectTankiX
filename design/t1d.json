@@ -30,7 +30,7 @@
          "width" : 44
       },
       "color" : [ 1, 1, 1, 1 ],
-      "imageName" : "destroed\\tower1.png",
+      "imageName" : "destroyed\\tower1.png",
       "position" : {
          "_typeName" : "AligningOffset",
          "horAlign" : 1,

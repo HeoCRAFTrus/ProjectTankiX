@@ -555,16 +555,16 @@
             "_typeName" : "RelativeBox",
             "height" : {
                "_typeName" : "RelativeValue",
-               "type" : 2,
-               "value" : 0.5
+               "type" : 0,
+               "value" : 0
             },
             "offset" : {
                "_empty" : true
             },
             "width" : {
                "_typeName" : "RelativeValue",
-               "type" : 2,
-               "value" : 0.5
+               "type" : 0,
+               "value" : 0
             }
          },
          "list" : [

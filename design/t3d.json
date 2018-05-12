@@ -29,7 +29,7 @@
          "width" : 40
       },
       "color" : [ 1, 1, 1, 1 ],
-      "imageName" : "destroed\\башня_3.png",
+      "imageName" : "destroyed\\башня_3.png",
       "position" : {
          "_typeName" : "AligningOffset",
          "horAlign" : 1,

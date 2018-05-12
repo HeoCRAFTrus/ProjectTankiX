@@ -1,0 +1,100 @@
+{
+   "_name" : "explosion",
+   "_typeName" : "ObjectConstruct",
+   "_version" : "VER3",
+   "animations" : [
+      {
+         "_key" : "expl",
+         "_value" : {
+            "_typeName" : "CompositeAnimation",
+            "animations" : [
+               {
+                  "_typeName" : "ParallelAnimation",
+                  "animations" : [
+                     {
+                        "_typeName" : "ScaleChange",
+                        "changeFunc" : 0,
+                        "objName" : "",
+                        "period" : 200,
+                        "relativeScaling" : true,
+                        "scale" : 2,
+                        "scalingType" : 0
+                     },
+                     {
+                        "_typeName" : "AngleChange",
+                        "angle" : 6.28000020980835,
+                        "changeFunc" : 0,
+                        "objName" : "",
+                        "period" : 100,
+                        "relativeRotation" : false
+                     },
+                     {
+                        "_typeName" : "ColorChange",
+                        "changeFunc" : 0,
+                        "color" : [
+                           0.294117659330368,
+                           0.294117659330368,
+                           0.294117659330368,
+                           0.7490196228027344
+                        ],
+                        "objName" : "",
+                        "period" : 500,
+                        "relativeChange" : false
+                     }
+                  ]
+               },
+               {
+                  "_typeName" : "ActionInAnimation",
+                  "action" : {
+                     "_typeName" : "RemoveAction"
+                  }
+               }
+            ]
+         }
+      }
+   ],
+   "finder" : {
+      "_typeName" : "FindableGeometryElement",
+      "geom" : {
+         "_typeName" : "IdenticGeometry"
+      }
+   },
+   "id" : 0,
+   "position" : {
+      "_typeName" : "PositionElement",
+      "angle" : 0,
+      "offset" : [ 0, 0 ],
+      "scaleX" : 1,
+      "scaleY" : 1
+   },
+   "selector" : {
+      "_typeName" : "PressableAndClickableElement",
+      "clickTime" : 500
+   },
+   "skin" : {
+      "_typeName" : "StaticTextureRect",
+      "box" : {
+         "_typeName" : "PixelBox",
+         "height" : 64,
+         "width" : 64
+      },
+      "color" : [ 1, 1, 1, 1 ],
+      "imageName" : "destroyed\\explosion.png",
+      "position" : {
+         "_typeName" : "AligningOffset",
+         "horAlign" : 1,
+         "horOffset" : {
+            "_typeName" : "RelativeValue",
+            "type" : 1,
+            "value" : 0
+         },
+         "vertAlign" : 1,
+         "vertOffset" : {
+            "_typeName" : "RelativeValue",
+            "type" : 1,
+            "value" : 0
+         }
+      }
+   },
+   "transitionAnimations" : []
+}

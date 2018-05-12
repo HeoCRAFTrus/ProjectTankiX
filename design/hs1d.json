@@ -29,7 +29,7 @@
          "width" : 64
       },
       "color" : [ 1, 1, 1, 1 ],
-      "imageName" : "destroed\\корпус.png",
+      "imageName" : "destroyed\\корпус.png",
       "position" : {
          "_typeName" : "AligningOffset",
          "horAlign" : 1,

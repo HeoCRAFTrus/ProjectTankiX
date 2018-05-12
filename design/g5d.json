@@ -29,7 +29,7 @@
          "width" : 106
       },
       "color" : [ 1, 1, 1, 1 ],
-      "imageName" : "destroed\\gun.png",
+      "imageName" : "destroyed\\gun.png",
       "position" : {
          "_typeName" : "AligningOffset",
          "horAlign" : 1,

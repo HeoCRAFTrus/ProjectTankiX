@@ -67,7 +67,6 @@ class MyApp : public App
         mainbhbphspbhbp = bhbp.load("hpb.json");
         animbhbphspbhbp = bhbp.load("hpb.json");
 
-
         mainhp = hsddos[housingm].hp;
         myhp = hsddos[animhs].hp;
 
@@ -147,6 +146,7 @@ class MyApp : public App
         mainhs.move(spidomer * timeDelta());
         maint.move(spidomer * timeDelta());
         maing.move(spidomer * timeDelta());
+
 
 		//-------------------------вперед
 		if (input.pressed(W) && (dviglo != 2) && (mesh_vod != 2))
@@ -491,127 +491,38 @@ class MyApp : public App
 
 			myhp = hsddos[housingm].hp;
 		}
+		if (destroed == true)
+		{
+			auto hspos = mainhs.pos();
+			auto angel = mainhs.angle();
+			housing.remove(mainhs);
+			mainhs = housing.load(hsddos[housingm].dnamehs);
+			mainhs.setAngle(angel);
+			mainhs.setPos(hspos);
+
+			auto angelt = maint.angle();
+			towers.remove(maint);
+			maint = towers.load(tddos[tower].dnamet);
+			maint.setAngle(angelt);
+
+			auto tvec = Vec2(10.0, 0.0);
+			tvec.rotate(mainhs.angle());
+			maint.setPos(tvec + mainhs.pos());
+			auto gvec = gddos[gun].sg + tddos[tower].sgt;
+			gvec.rotate(maint.angle());
+			maing.setPos(gvec + maint.pos());
+
+			auto angelg = maing.angle();
+			guns.remove(maing);
+			maing = guns.load(gddos[gun].dnameg);
+			maing.setAngle(angelg);
+			auto ggvec = gddos[gun].sg + tddos[tower].sgt;
+			ggvec.rotate(maint.angle());
+			maing.setPos(gvec + maint.pos());
+		}
 		//cout << animt.angle() << " -> " << angvec.angle() << endl;
         OurCrewModules(bk, com, raddist, zar, mesh_vod, navod, dviglo, radio ,triplex, gusliy, bashnia, dulo , mainbhbphspbhbp);
-
-		//////////////////////////////////////////////наш экипаж//////////////////////////////////////////////
-		//--------------------------------водила
-		/*	if ( != 0)
-		{
-		if ( == 1)
-		{
-		mainbhbphspbhbp.child<Texture>("").show();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").show();
-		}
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		//--------------------------------радист
-		if ( != 0)
-		{
-		if ( == 1)
-		{
-		mainbhbphspbhbp.child<Texture>("").show();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").show();
-		}
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		//--------------------------------инженер
-		if ( != 0)
-		{
-		if ( == 1)
-		{
-		mainbhbphspbhbp.child<Texture>("").show();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").show();
-		}
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		//--------------------------------командир
-		if ( != 0)
-		{
-		if ( == 1)
-		{
-		mainbhbphspbhbp.child<Texture>("").show();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").show();
-		}
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		//--------------------------------наводчик
-		if ( != 0)
-		{
-		if ( == 1)
-		{
-		mainbhbphspbhbp.child<Texture>("").show();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").show();
-		}
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		//--------------------------------заряжающий
-		if ( != 0)
-		{
-		if ( == 1)
-		{
-		mainbhbphspbhbp.child<Texture>("").show();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").show();
-		}
-		}
-		else
-		{
-		mainbhbphspbhbp.child<Texture>("").hide();
-		mainbhbphspbhbp.child<Texture>("").hide();
-		}
-		//-----------------------------------------
-
-		mainbhbphspbhbp.child<Layout>("Row").update(); */
+		
 
 		//////////////////////////////////////////////противник/////////////////////////////////////////////
 
@@ -676,6 +587,7 @@ class MyApp : public App
 		
         animbhbphspbhbp.child<Layout>("Row2").update();
 		////////////////////////////////////////////////////////////////////////////////////////////
+		
 	}
 	
 
@@ -800,6 +712,13 @@ class MyApp : public App
 				int aa = 0;
 				shaders2.remove(shell);
 				myhp -= gddos[Agun].uron;
+				if (myhp <= 0)
+				{
+					auto Explosion = shaders1.load("explosion.json");
+					Explosion.setPos(mainhs.pos());
+					Explosion.anim.run("expl");
+					destroed = true;
+				}
 				aa = randomInt(1, 2);
 				if ((aa == 2) && (radio<2))
 					radio++;
@@ -820,8 +739,14 @@ class MyApp : public App
 					
 					shaders2.remove(shell);
 					myhp -= gddos[Agun].uron * 2;
-					
-					
+					if (myhp <= 0)
+					{
+						auto Explosion = shaders1.load("explosion.json");
+						Explosion.setPos(mainhs.pos());
+						Explosion.anim.run("expl");
+						destroed = true;
+						
+					}
 					for (int aa = 1; aa != 0;)
 					{
 						int a = 0;
@@ -872,6 +797,14 @@ class MyApp : public App
 						
 						shaders2.remove(shell);
 						myhp -= gddos[Agun].uron * 3;
+						if (myhp <= 0)
+						{
+							auto Explosion = shaders1.load("explosion.json");
+							Explosion.setPos(mainhs.pos());
+							Explosion.anim.run("expl");
+							destroed = true;
+						
+						}
 						if (dviglo<2)
 							dviglo++;
 						continue;
@@ -1024,6 +957,7 @@ class MyApp : public App
 	Timer shellTimer;
 	float rtm;
     Vec2 spidomer;
+	bool destroed;
 	///////////////////////модули
 	int gusliy;
 	int dviglo;
