@@ -375,7 +375,7 @@ class MyApp : public App
 			auto vecsh = Vec2(2000.0, 0.0);
 			vecsh.rotate(shell.angle());
 			shell.setPos(shell.pos() + vecsh* timeDelta());
-			if (!shell.box().intersects(gamepole.gameBox()))
+			if (!shell.box().intersects(Box(-10000, -10000, 10000, 10000)))
 			{
 				shaders2.remove(shell);
 				continue;
@@ -520,6 +520,35 @@ class MyApp : public App
 			ggvec.rotate(maint.angle());
 			maing.setPos(gvec + maint.pos());
 		}
+		if (Adestroed == true)
+		{
+			auto hspos = animhs.pos();
+			auto angel = animhs.angle();
+			housing.remove(animhs);
+			animhs = housing.load(hsddos[Ahousing].dnamehs);
+			animhs.setAngle(angel);
+			animhs.setPos(hspos);
+
+			auto angelt = animt.angle();
+			towers.remove(animt);
+			animt = towers.load(tddos[Atower].dnamet);
+			animt.setAngle(angelt);
+
+			auto tvec = Vec2(10.0, 0.0);
+			tvec.rotate(animhs.angle());
+			animt.setPos(tvec + animhs.pos());
+			auto gvec = gddos[Agun].sg + tddos[Atower].sgt;
+			gvec.rotate(animt.angle());
+			animg.setPos(gvec + animt.pos());
+
+			auto angelg = animg.angle();
+			guns.remove(animg);
+			animg = guns.load(gddos[Agun].dnameg);
+			animg.setAngle(angelg);
+			auto ggvec = gddos[Agun].sg + tddos[Atower].sgt;
+			ggvec.rotate(animt.angle());
+			animg.setPos(gvec + animt.pos());
+		}
 		//cout << animt.angle() << " -> " << angvec.angle() << endl;
         OurCrewModules(bk, com, raddist, zar, mesh_vod, navod, dviglo, radio ,triplex, gusliy, bashnia, dulo , mainbhbphspbhbp);
 		
@@ -606,7 +635,7 @@ class MyApp : public App
                 gusliy++;
             }
 
-			if (!shell.box().intersects(gamepole.gameBox()))
+			if (!shell.box().intersects(Box(-10000,-10000, 10000, 10000)))
 			{
 				shaders2.remove(shell);
 				continue;
@@ -616,6 +645,13 @@ class MyApp : public App
 				int a = 0;
 				shaders2.remove(shell);
 				mainhp -= gddos[gun].uron;
+				if (mainhp <= 0)
+				{
+					auto Explosion = shaders1.load("explosion.json");
+					Explosion.setPos(animhs.pos());
+					Explosion.anim.run("expl");
+					Adestroed = true;
+				}
 				a = randomInt(1, 2);
 				if ((a == 2) && (Aradio<2))
 					Aradio++;
@@ -630,6 +666,13 @@ class MyApp : public App
 					
 					shaders2.remove(shell);
 					mainhp -= gddos[gun].uron * 2;
+					if (mainhp <= 0)
+					{
+						auto Explosion = shaders1.load("explosion.json");
+						Explosion.setPos(animhs.pos());
+						Explosion.anim.run("expl");
+						Adestroed = true;
+					}
 					for (int aa = 1; aa != 0;)
 					{
 						int a = 0;
@@ -695,6 +738,13 @@ class MyApp : public App
 						
 						shaders2.remove(shell);
 						mainhp -= gddos[gun].uron * 3;
+						if (mainhp <= 0)
+						{
+							auto Explosion = shaders1.load("explosion.json");
+							Explosion.setPos(animhs.pos());
+							Explosion.anim.run("expl");
+							Adestroed = true;
+						}
 					
 						if (Adviglo<2)
 							Adviglo++;
@@ -987,6 +1037,7 @@ class MyApp : public App
 	float mainhp;
 	Timer AshellTimer;
 	float artm;
+	bool Adestroed;
 	///////////////////////модули
 	int Agusliy;
 	int Adviglo;
