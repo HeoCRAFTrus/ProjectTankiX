@@ -382,9 +382,16 @@ class MyApp : public App
 			}
 			if (dist(shell.pos(), animhs.pos()) <= hsddos[Ahousing].diameter / 2)
 			{
-				mainhp -= gddos[gun].uron;
-				shaders2.remove(shell);
-				continue;
+				mainhp -= gddos[gun].uron; \
+					if (mainhp <= 0)
+					{
+						auto Explosion = shaders1.load("explosion.json");
+						Explosion.setPos(animhs.pos());
+						Explosion.anim.run("expl");
+						Adestroed = true;
+						shaders2.remove(shell);
+						continue;
+					}
 			}
 			else
 			{
@@ -393,16 +400,30 @@ class MyApp : public App
 				if (dist(shell.pos(), animhs.pos() + sdvigvec) <= hsddos[Ahousing].diameter / 2)
 				{
 					mainhp -= gddos[gun].uron * 2;
-					shaders2.remove(shell);
-					continue;
+					if (mainhp <= 0)
+					{
+						auto Explosion = shaders1.load("explosion.json");
+						Explosion.setPos(animhs.pos());
+						Explosion.anim.run("expl");
+						Adestroed = true;
+						shaders2.remove(shell);
+						continue;
+					}
 				}
 				else
 				{
 					if (dist(shell.pos(), animhs.pos() - sdvigvec) <= hsddos[Ahousing].diameter / 2)
 					{
 						mainhp -= gddos[gun].uron * 3;
-						shaders2.remove(shell);
-						continue;
+						if (mainhp <= 0)
+						{
+							auto Explosion = shaders1.load("explosion.json");
+							Explosion.setPos(animhs.pos());
+							Explosion.anim.run("expl");
+							Adestroed = true;
+							shaders2.remove(shell);
+							continue;
+						}
 					}
 					if (shell.box().intersects(wall1.box()) || shell.box().intersects(wall2.box()))
 						shaders2.remove(shell);
@@ -645,13 +666,7 @@ class MyApp : public App
 				int a = 0;
 				shaders2.remove(shell);
 				mainhp -= gddos[gun].uron;
-				if (mainhp <= 0)
-				{
-					auto Explosion = shaders1.load("explosion.json");
-					Explosion.setPos(animhs.pos());
-					Explosion.anim.run("expl");
-					Adestroed = true;
-				}
+				
 				a = randomInt(1, 2);
 				if ((a == 2) && (Aradio<2))
 					Aradio++;
@@ -666,13 +681,7 @@ class MyApp : public App
 					
 					shaders2.remove(shell);
 					mainhp -= gddos[gun].uron * 2;
-					if (mainhp <= 0)
-					{
-						auto Explosion = shaders1.load("explosion.json");
-						Explosion.setPos(animhs.pos());
-						Explosion.anim.run("expl");
-						Adestroed = true;
-					}
+					
 					for (int aa = 1; aa != 0;)
 					{
 						int a = 0;
@@ -738,13 +747,7 @@ class MyApp : public App
 						
 						shaders2.remove(shell);
 						mainhp -= gddos[gun].uron * 3;
-						if (mainhp <= 0)
-						{
-							auto Explosion = shaders1.load("explosion.json");
-							Explosion.setPos(animhs.pos());
-							Explosion.anim.run("expl");
-							Adestroed = true;
-						}
+						
 					
 						if (Adviglo<2)
 							Adviglo++;
