@@ -1,5 +1,5 @@
 #pragma once
-void levelGen(Layer<void> clay, Layer<void> shaders1)
+void levelGen(Layer<void> clay, Layer<void> shaders1,Layer<void> baricades)
 {
     for (int i = 0; i < 100; i++)
     {
@@ -17,4 +17,5 @@ void levelGen(Layer<void> clay, Layer<void> shaders1)
         }
 
     }
+	baricades.load("house1.json", 500, 500);
 }

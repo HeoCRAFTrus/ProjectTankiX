@@ -4,9 +4,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="heads\Crew.h" />
     <ClInclude Include="heads\Level.h" />
     <ClInclude Include="heads\Maths.h" />
     <ClInclude Include="heads\Tanks.h" />
+    <ClInclude Include="heads\CrewAndModules.h" />
   </ItemGroup>
 </Project>

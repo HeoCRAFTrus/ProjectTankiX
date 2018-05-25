@@ -107,7 +107,7 @@ class MyApp : public App
         connect(exit, close);
 
         //////////////////////////////////////////////инициализация карты/////////////////////////////////////
-        levelGen(clay, shaders1);
+        levelGen(clay, shaders1, baricades);
     
     }
 
@@ -223,9 +223,22 @@ class MyApp : public App
                 auto ddust = dust.load("dust.json", mainhs.pos());
                 ddust.anim.run("zatux");
                 dust.data(ddust) = spidomer/1.25;
-                auto ttraki = traki.load("sled.json", mainhs.pos());
-                ttraki.anim.run("slzat");
-                ttraki.setAngle(spidomer.angle());
+				
+				for (auto clay1 : clay.all())
+				{
+					if (!clay.find(mainhs.box()).empty())
+					{
+						auto ttrakiLight = traki.load("sledLight.json", mainhs.pos());
+						ttrakiLight.anim.run("slzat");
+						ttrakiLight.setAngle(spidomer.angle());
+					}
+					else
+					{
+						auto ttraki = traki.load("sled.json", mainhs.pos());
+						ttraki.anim.run("slzat");
+						ttraki.setAngle(spidomer.angle());
+					}
+				}
             }
         }
         for (auto ddust : dust.all())
@@ -572,6 +585,7 @@ class MyApp : public App
 		}
 		//cout << animt.angle() << " -> " << angvec.angle() << endl;
         OurCrewModules(bk, com, raddist, zar, mesh_vod, navod, dviglo, radio ,triplex, gusliy, bashnia, dulo , mainbhbphspbhbp);
+
 		
 
 		//////////////////////////////////////////////противник/////////////////////////////////////////////
@@ -655,6 +669,18 @@ class MyApp : public App
             {
                 gusliy++;
             }
+			for (auto roof1 : baricades.all())
+				if (shell.box().intersects(roof1.box()))
+					baricades.remove(roof1);
+			for (auto roof2 : baricades.all())
+				if (shell.box().intersects(roof2.box()))
+					roof2.hide();
+			for (auto roof3 : baricades.all())
+				if (shell.box().intersects(roof3.box()))
+					roof3.hide();
+			for (auto roof4 : baricades.all())
+				if (shell.box().intersects(roof4.box()))
+					roof4.hide();
 
 			if (!shell.box().intersects(Box(-10000,-10000, 10000, 10000)))
 			{
@@ -984,6 +1010,7 @@ class MyApp : public App
 	////////////////////////////////
 	LayerFromDesign(void, housing);
     LayerFromDesign(void, shaders1);
+	LayerFromDesign(void, baricades);
     LayerFromDesign(void, traki);
     LayerFromDesign(Vec2, dust);
 	LayerFromDesign(Vec2, shaders2);
