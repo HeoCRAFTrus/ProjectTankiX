@@ -5,6 +5,7 @@ using namespace std;
 #include"heads\Tanks.h"
 #include"heads\Maths.h"
 #include"heads\Level.h"
+#include <thread>
 //
 
 int stepn = 100;
