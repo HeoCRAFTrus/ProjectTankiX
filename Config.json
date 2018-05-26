@@ -4,6 +4,9 @@
     "height": 1080,
     "imagesPath": "images",
     "mode": "window",
+    "musicPath": "music",
     "shadersPath": "../gamebase/resources/shaders",
+    "soundsPath": "sounds",
+    "version": "VER3",
     "width": 1920
 }

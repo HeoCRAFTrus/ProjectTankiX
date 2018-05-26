@@ -38,26 +38,6 @@
                "value" : 0
             }
          },
-         "gameBoxObj" : {
-            "_typeName" : "RelativeGameBox",
-            "box" : {
-               "_typeName" : "RelativeBox",
-               "height" : {
-                  "_typeName" : "RelativeValue",
-                  "type" : 2,
-                  "value" : 10
-               },
-               "offset" : {
-                  "_empty" : true
-               },
-               "width" : {
-                  "_typeName" : "RelativeValue",
-                  "type" : 2,
-                  "value" : 10
-               }
-            },
-            "coordSystem" : 0
-         },
          "list" : [
             {
                "_name" : "graund",
@@ -423,8 +403,7 @@
                "type" : 1,
                "value" : 0
             }
-         },
-         "viewCenter" : [ 0, 0 ]
+         }
       },
       {
          "_typeName" : "CanvasLayout",
@@ -645,7 +624,7 @@
                "_typeName" : "LinearLayout",
                "list" : [
                   {
-                     "_name" : "exitKPK",
+                     "_name" : "exit_kpk",
                      "_typeName" : "Button",
                      "position" : {
                         "_typeName" : "AligningOffset",
@@ -679,11 +658,12 @@
                         },
                         "text" : "Выход",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   },
                   {
-                     "_name" : "yep",
+                     "_name" : "enter_kpk",
                      "_typeName" : "Button",
                      "position" : {
                         "_typeName" : "AligningOffset",
@@ -717,6 +697,7 @@
                         },
                         "text" : "Применить",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   }
@@ -768,7 +749,7 @@
                "_typeName" : "LinearLayout",
                "list" : [
                   {
-                     "_name" : "map",
+                     "_name" : "map_kpk",
                      "_typeName" : "Button",
                      "position" : {
                         "_typeName" : "AligningOffset",
@@ -802,11 +783,12 @@
                         },
                         "text" : "Карта",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   },
                   {
-                     "_name" : "2",
+                     "_name" : "tasks_kpk",
                      "_typeName" : "Button",
                      "position" : {
                         "_typeName" : "AligningOffset",
@@ -840,6 +822,7 @@
                         },
                         "text" : "Задачи",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   }
@@ -888,6 +871,7 @@
                "skipInvisibleElements" : false
             },
             {
+               "_name" : "Anhar_kpk",
                "_typeName" : "Button",
                "position" : {
                   "_typeName" : "AligningOffset",
@@ -921,6 +905,7 @@
                   },
                   "text" : "Ангар",
                   "textColor" : [ 0, 0, 0, 1 ],
+                  "textOutlineColor" : [ 0, 0, 0, 1 ],
                   "useGradient" : true
                }
             },
@@ -928,7 +913,7 @@
                "_typeName" : "LinearLayout",
                "list" : [
                   {
-                     "_name" : "cxt",
+                     "_name" : "bots_kpk",
                      "_typeName" : "Button",
                      "position" : {
                         "_typeName" : "AligningOffset",
@@ -962,11 +947,12 @@
                         },
                         "text" : "Боты",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   },
                   {
-                     "_name" : "kjhg",
+                     "_name" : "mytank_kpk",
                      "_typeName" : "Button",
                      "position" : {
                         "_typeName" : "AligningOffset",
@@ -1000,6 +986,7 @@
                         },
                         "text" : "Мой танк",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   }
@@ -1160,6 +1147,7 @@
                         },
                         "text" : "Новая игра",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   },
@@ -1198,6 +1186,7 @@
                         },
                         "text" : "Загрузить игру",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   },
@@ -1236,6 +1225,7 @@
                         },
                         "text" : "Как играть",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   },
@@ -1274,6 +1264,7 @@
                         },
                         "text" : " Выход",
                         "textColor" : [ 0, 0, 0, 1 ],
+                        "textOutlineColor" : [ 0, 0, 0, 1 ],
                         "useGradient" : true
                      }
                   }

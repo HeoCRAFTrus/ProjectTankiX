@@ -6,6 +6,8 @@ using namespace std;
 #include"heads\Maths.h"
 #include"heads\Level.h"
 #include <thread>
+
+
 //
 
 int stepn = 100;
@@ -29,10 +31,12 @@ class MyApp : public App
 	}
 
 	////////////////////////////////////////////// //////////////////////////////////////////////
+
     void load()
     {
+		audio.loop("ostTrek.ogg");
+		audio.loop("dviglo.ogg", 1);
 		randomize();
-
         mainhsangle = 0;
         //auto tvec = Vec2(10.0, 0.0);
         //tvec.rotate(mainhs.angle());
@@ -334,6 +338,8 @@ class MyApp : public App
 			auto shellCreate = shaders2.load("shell.json");
 			shellCreate.setAngle(maing.angle());
 			shellCreate.setPos(maing.pos());
+			if (gun == 1)
+				audio.run("vystrel-i-padaet-gilza_(mp3-CC.com).ogg");
 			//rload.setSizes(gddos[gun].gload/1000*timeDelta(), 20);
 		}
 		//-----------------------------------КПК
@@ -349,6 +355,12 @@ class MyApp : public App
 				kpk.show();
 			}
 		}
+		if ((input.pressed(W)) || (input.pressed(S)) || (input.pressed(A)) || (input.pressed(D)))
+		{
+			audio.resume(1);
+		}
+		else
+		audio.pause(1);
 		//-----------------------------------пауза
 		if (input.pressed(Escape))
 		{
@@ -670,19 +682,8 @@ class MyApp : public App
             {
                 gusliy++;
             }
-			for (auto roof1 : baricades.all())
-				if (shell.box().intersects(roof1.box()))
-					baricades.remove(roof1);
-			for (auto roof2 : baricades.all())
-				if (shell.box().intersects(roof2.box()))
-					roof2.hide();
-			for (auto roof3 : baricades.all())
-				if (shell.box().intersects(roof3.box()))
-					roof3.hide();
-			for (auto roof4 : baricades.all())
-				if (shell.box().intersects(roof4.box()))
-					roof4.hide();
 
+				
 			if (!shell.box().intersects(Box(-10000,-10000, 10000, 10000)))
 			{
 				shaders2.remove(shell);
@@ -894,6 +895,38 @@ class MyApp : public App
 						shaders2.remove(shell);
 						continue;
 					}
+				}
+			}
+		}
+
+
+		for (auto shell : shaders2.all())
+		{
+			for (auto house : baricades.all())
+			{
+				if (shell.box().intersects(around(32, 32, house.pos() + Vec2(16, 16))))
+				{
+					house.child<Texture>("roof1").hide();
+					shell.kill();
+					break;
+				}
+				if (shell.box().intersects(around(32, 32, house.pos() + Vec2(-16, 16))))
+				{
+					house.child<Texture>("roof2").hide();
+					shell.kill();
+					break;
+				}
+				if (shell.box().intersects(around(32, 32, house.pos() + Vec2(-16, -16))))
+				{
+					house.child<Texture>("roof3").hide();
+					shell.kill();
+					break;
+				}
+				if (shell.box().intersects(around(32, 32, house.pos() + Vec2(16, -16))))
+				{
+					house.child<Texture>("roof4").hide();
+					shell.kill();
+					break;
 				}
 			}
 		}

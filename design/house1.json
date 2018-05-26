@@ -24,20 +24,9 @@
       "_typeName" : "CanvasLayout",
       "adjustment" : 0,
       "box" : {
-         "_typeName" : "RelativeBox",
-         "height" : {
-            "_typeName" : "RelativeValue",
-            "type" : 0,
-            "value" : 0
-         },
-         "offset" : {
-            "_empty" : true
-         },
-         "width" : {
-            "_typeName" : "RelativeValue",
-            "type" : 0,
-            "value" : 0
-         }
+         "_typeName" : "PixelBox",
+         "height" : 64,
+         "width" : 64
       },
       "list" : [
          {
